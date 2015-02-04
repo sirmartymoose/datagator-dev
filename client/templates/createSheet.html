@@ -1,0 +1,144 @@
+<template name="createSheet">
+	<div class="container-fluid">
+		<div class="row" id="pageTitle">
+			<div class='col-md-2'> </div>
+			<div class='col-md-8'>
+				<div class="page-header">
+					<h1>Create Sheet<small> Make a new Sheet...</small></h1>
+				</div>
+			</div>
+			<div class='col-md-2'> </div>
+		</div>
+		<form class="main form" id="mainForm">
+			<div class="row" id="content">
+				<div class='col-md-3'> </div>
+				<div class='col-md-6'>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Sheet Details</h3>
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+								<a href="#" class="list-group-item">
+									<div class="form-group">
+										<label for="sheetName">Sheet Name</label>
+										<input type="text" class="form-control" id="title" name="title" placeholder="Name your sheet...">
+									</div>
+								</a>
+
+
+							</div>
+
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+
+				<div class='col-md-3'> </div>
+			</div>
+			<div class="row" id="content">
+				<div class='col-md-3'> </div>
+				<div class='col-md-6'>
+					<div class="panel panel-default">
+
+						<div class="panel-heading">
+							<div class="row">
+								<div class='col-md-6'>
+									<div id="colHeader">
+										<h3 class="panel-title">Columns</h3>
+									</div>
+								</div>
+								<div class='col-md-6'>
+									<div id="addColumn">
+										<button class="btn btn-success btn-sm"> Add Column </button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel-body">
+
+
+
+
+
+
+							<div class="list-group" id='allColGroup'>
+								<div class='colGroup'>
+									<div class='list-group-item' id='colGroup'>
+
+										<div class='form-group'>
+											<label for='columnName'>Column Name</label>
+											<input type='text' class='form-control' id='columnName' placeholder='Name your column...'>
+										</div>
+
+										<div class='form-group'>
+											<label for='columnName'>Data Type</label>
+											<select class='form-control' id='dataType'>
+												<option value='text'>Text</option>
+												<option value='integer'>Integer</option>
+												<option value='decimal'>Decimal</option>
+												<option value='date'>Date</option>
+											</select>
+										</div>
+
+										<div class='form-group'>
+											<label for='columnName'>Who Can View</label>
+											<select class='form-control' id='whoView'>
+												<option value='all'>Everyone can View</option>
+												<option value='owner'>Only I can view</option>
+											</select>
+										</div>
+
+
+										<div class='form-group'>
+											<label for='columnName'>Who Can Edit</label>
+											<select class='form-control' id='whoEdit'>
+												<option value='guest'> Only Guests can Edit</option>
+												<option value='owner'>Only I can Edit</option>
+											</select>
+										</div>
+
+										<div class='form-group'>
+											<label for='columnName'>Required</label>
+											<div class='checkbox'>
+												<label>
+													<input type='checkbox' id='required' value=''> Required Field for Guests to Enter
+												</label>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="row" id="addColOffset">
+								<input type="submit" id="formSubmit" value="Submit" class="btn btn-primary" />
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class='col-md-3'> </div>
+			</div>
+
+
+
+
+		</form>
+
+
+
+
+
+
+
+	</div>
+
+
+</template>

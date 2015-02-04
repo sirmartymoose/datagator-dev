@@ -1,0 +1,98 @@
+	#header {
+	    height: 50px;
+	    font-size: 1.3em;
+	}
+	#righter {
+	    position: relative;
+	    float: right;
+	}
+	#buttonOffset {
+	    position: relative;
+	    float: left;
+	    right: 15px;
+	}
+	#addColOffset {
+	    position: relative;
+	    float: right;
+	    right: 15px;
+	}
+	#addColumn {
+	    position: relative;
+	    float: right;
+	}
+	#colHeader {
+	    position: relative;
+	    float: left;
+	    top: 5px;
+	}
+	#colGroup {
+	    margin-bottom: 15px;
+	}
+	
+	#legendBox{
+
+		
+	}
+	
+	#legendRequired{
+		border: solid black 1px; 
+
+		background-color: #add8e6;
+		width: 15px; 
+		height: 20px;
+		margin-top: 5px;
+		border-radius: 3px;
+		
+	}
+	
+	#legendHidden{
+		border: solid black 1px; 
+		background-color: #e6add8;
+		width: 15px; 
+		height: 20px;
+		margin-top: 5px;
+		border-radius: 3px;
+
+		
+	}
+	
+	#legendOwner{
+		border: solid black 1px; 
+		background-color: white;
+		width: 15px; 
+		height: 20px;
+		margin-top: 5px;
+		border-radius: 3px;
+
+		
+	}
+	
+	#legendGuest{
+
+		border: solid black 1px; 
+		background-color: #ececec;
+		width: 15px; 
+		height: 20px;
+		margin-top: 5px;
+		border-radius: 3px;
+		
+	}
+	
+	#legendText{
+		text-align: right;
+		margin-top: 5px;
+		
+	}
+	
+	#chatBox{
+		height: 500px;
+		border: solid black 1px;
+		border-radius: 4px;
+		
+	}
+	
+	#buttonGroup{
+		position: relative; 
+		bottom: 5px; 
+		
+	}
