@@ -151,24 +151,29 @@ function getSheetColumns(){
           if(isOwner === false){
 
             readOnly = false;
+            cellRender = "text"
+            
             whoEditMatch = whoEdit.match(/owner/)
             //console.log(whoEditMatch)
             if(whoEditMatch !== null){
               readOnly = true;
+              cellRender = yellowRenderer
               //console.log(whoEditMatch)
             }
-
-            colObj = {data: columnName, readOnly: readOnly}
             
-            whoViewMatch = whoView.match(/everyone/); 
-            if(whoViewMatch !== null){
-            columns.push(colObj)
-            }
+                colObj = {data: columnName, readOnly: readOnly, renderer: cellRender}
+                //colObj = {data: columnName, readOnly: readOnly}
+                columns.push(colObj)
+
+
+            
+
           }
     }
     
     return columns
     }
+
 
 
 function insertSheetData(sheetDataArray){
@@ -311,10 +316,10 @@ function getSheetData(sheetId){
     
  $container.handsontable({
   data: getData(),
-  colHeaders: getHot_colHeaders(true),
-  colWidths: getHot_colWidths(true), 
+  colHeaders: getHot_colHeaders(false),
+  colWidths: getHot_colWidths(false), 
   dataSchema: getHot_dataSchema(),
-  columns: getHot_columns(true),
+  columns: getHot_columns(false),
   minSpareRows: 1
 
 });
