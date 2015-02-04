@@ -1,7 +1,47 @@
-
-
 <!-- define a template called welcomePage -->
 <template name="welcome">
-  <p>welcome</p>
+   {{#if currentUser}}
+  		<div class="row" id="pageTitle">
+			<div class='col-md-2'> </div>
+			<div class='col-md-8'>
+				<div class="page-header">
+					<h1>Dashboard<small> Select Your Action</small></h1>
+				</div>
+			</div>
+			<div class='col-md-2'> </div>
+		</div>
+		<div class="row">
+		    <div class='col-md-2'></div>
+		    <div class='col-md-8'>
+		<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Create New Sheet</h3>
+						</div>
+			  <ul class="list-group">
 
+				  <div id="results"> </div>
+  			</ul>
+	    </div>
+	    
+	    <div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Sheets you Own</h3>
+						</div>
+			  <ul class="list-group">
+				  <div id="sheetsYouOwn_results"> </div>
+  			</ul>
+	    </div>
+	    		<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Sheets Shared with you</h3>
+						</div>
+			  <ul class="list-group">
+				  <div id="sheetsYouShare_results"> </div>
+  			</ul>
+	    </div>
+	    </div>
+	    <div class='col-md-2'></div>
+		</div>
+
+   {{/if}}
 </template>
