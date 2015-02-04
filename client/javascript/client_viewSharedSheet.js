@@ -2,7 +2,7 @@
 if (Meteor.isClient) {
   
 
-  Template.viewSheet.rendered = function () {
+  Template.viewSharedSheet.rendered = function () {
     
           function logEvent(ActionTemplate, ActionMessage, ActionSheetId){
           actionUserId = Meteor.userId() 
@@ -12,7 +12,7 @@ if (Meteor.isClient) {
           
       }
     
-      logEvent('viewSheet', 'Rendered: viewSheet.js', Session.get("mySheetId"))
+      logEvent('viewSharedSheet', 'Rendered: viewSharedSheet.js', Session.get("mySheetId"))
       
     
 
@@ -24,11 +24,11 @@ if (Meteor.isClient) {
     
     sheetId = mySheetId;
 
-    sheetOwnerAuthor = "sirmartymoosez"
+    sheetOwnerAuthor = Session.get("userEmail")
     
     //myid = this.params._id
     
-
+console.log(sheetOwnerAuthor)
     
  Sheets = sheetDefinitions.findOne({_id: sheetId})
     
@@ -104,7 +104,7 @@ function getSheetColumns(){
     
 
   function getHot_dataSchema(){
-    dataSchema = {sheetOwnerAuthor: sheetOwnerAuthor, sheetId: sheetId}
+    dataSchema = {sheetOwnerAuthor: sheetOwnerAuthor, sheetId: sheetId, sheetEditorEmail: Session.get("userEmail") }
     colHeaders = getHot_colHeaders()
     numCols = cols.length;
     for (var i = 0; i < numCols; i++) {
@@ -294,7 +294,7 @@ function getSheetData(sheetId){
         
                     function getData() {
                       resultArray = []
-                      loadData = sheetData.find({sheetId: sheetId}).fetch()
+                      loadData = sheetData.find({sheetId: sheetId, sheetOwnerAuthor: Session.get("userEmail") }).fetch()
                       
                       $(loadData).each(function(x,y){
                         resultArray.push(y)
