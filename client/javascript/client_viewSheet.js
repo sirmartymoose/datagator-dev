@@ -4,6 +4,7 @@ if (Meteor.isClient) {
 
   Template.viewSheet.rendered = function () {
         
+        
         sheetEvent(Session.get("mySheetId"), "Loaded")
     
           function logEvent(ActionTemplate, ActionMessage, ActionSheetId){
@@ -103,6 +104,9 @@ if (Meteor.isClient) {
       
       
     $(document).ready(function(){
+       //console.log(sheetHistory_getCreatedDate(Session.get("mySheetId")))
+       //console.log(sheetHistory_getHistory(Session.get("mySheetId")))
+       //console.log(sheetHistory_getNumberUpdatedUsers(Session.get("mySheetId")))
       
       $("#shareSheet").click(function(){
       sheetEvent(Session.get("mySheetId"), "Shared")
