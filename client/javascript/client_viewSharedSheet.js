@@ -175,11 +175,17 @@ console.log(sheetOwnerAuthor)
 hotInstance = $("#HOT").handsontable('getInstance');
 
 $("#saveSheet").click(function(){
+  lineIterator = 0 
   saveData = $("#HOT").handsontable('getData');
+  numLines = saveData.length
   $(saveData).each(function(x,y){
       //sheetData.insert(y)
       dataId = y['_id']
-      sheetData.update({_id: dataId},y,{ upsert: true })
+      
+      if(lineIterator < numLines - 1){
+        sheetData.update({_id: dataId},y,{ upsert: true })
+        lineIterator = lineIterator + 1;
+      }
       
       
     
