@@ -3,6 +3,8 @@ if (Meteor.isClient) {
   
 
   Template.viewSharedSheet.rendered = function () {
+        
+        sheetEvent(Session.get("mySheetId"), "Opened")
     
           function logEvent(ActionTemplate, ActionMessage, ActionSheetId){
           actionUserId = Meteor.userId() 
@@ -175,6 +177,7 @@ console.log(sheetOwnerAuthor)
 hotInstance = $("#HOT").handsontable('getInstance');
 
 $("#saveSheet").click(function(){
+      sheetEvent(Session.get("mySheetId"), "Saved")
   lineIterator = 0 
   saveData = $("#HOT").handsontable('getData');
   numLines = saveData.length

@@ -3,6 +3,8 @@ if (Meteor.isClient) {
   
 
   Template.viewSheet.rendered = function () {
+        
+        sheetEvent(Session.get("mySheetId"), "Loaded")
     
           function logEvent(ActionTemplate, ActionMessage, ActionSheetId){
           actionUserId = Meteor.userId() 
@@ -103,6 +105,7 @@ if (Meteor.isClient) {
     $(document).ready(function(){
       
       $("#shareSheet").click(function(){
+      sheetEvent(Session.get("mySheetId"), "Shared")
       populateShareForm()
       })
       
@@ -174,6 +177,7 @@ if (Meteor.isClient) {
 hotInstance = $("#HOT").handsontable('getInstance');
 
 $("#saveSheet").click(function(){
+  sheetEvent(Session.get("mySheetId"), "Saved")
   lineIterator = 0 
   saveData = $("#HOT").handsontable('getData');
   numLines = saveData.length
