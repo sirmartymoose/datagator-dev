@@ -35,18 +35,21 @@ $(document).ready(function(){
     					"</div> "+
     					"<div class='col-md-4'>"+
     					"	<div class='list-group-item-heading'>"+
-    					"		<h4>Saved</h4> "+
+    					"		<h4>Shared</h4> "+
     						"</div>"+
     					"</div>"+
+    					"<div class='col-md-3'><h4>6 contributions<span class='badge' id='listsheetsbadge' data-toggle='tooltip' data-placement='top' title='Tooltip on top'>+4</span></h4> </div>" +
     				"</div>"+
     				"<div class='row'>"+
     					"<div class='col-md-4' > "+
-    							"<h4> hello </h4>" +
+    							"Created: Mar 4th, 2015" +
     						
     					"</div> "+
-    					"<div class='col-md-2'>"+
-    					"		Status "+
+    					"<div class='col-md-4'>"+
+    					"		March 15, 2015 "+
     					"</div>"+
+    					    					"<div class='col-md-3'>4 Pending </div>" +
+
     				"</div>"+
     			"</li>"
           
