@@ -5,7 +5,7 @@ if (Meteor.isClient) {
   Template.viewSheet.rendered = function () {
         
         
-        sheetEvent(Session.get("mySheetId"), "Loaded")
+        sheetEvent(Session.get("mySheetId"), "ownerLoaded")
     
           function logEvent(ActionTemplate, ActionMessage, ActionSheetId){
           actionUserId = Meteor.userId() 
@@ -105,7 +105,7 @@ if (Meteor.isClient) {
       
     $(document).ready(function(){
        //console.log(sheetHistory_getCreatedDate(Session.get("mySheetId")))
-       //console.log(sheetHistory_getHistory(Session.get("mySheetId")))
+       console.log(sheetHistory_getHistory(Session.get("mySheetId")))
        //console.log(sheetHistory_getNumberUpdatedUsers(Session.get("mySheetId")))
       
       $("#shareSheet").click(function(){
@@ -181,7 +181,7 @@ if (Meteor.isClient) {
 hotInstance = $("#HOT").handsontable('getInstance');
 
 $("#saveSheet").click(function(){
-  sheetEvent(Session.get("mySheetId"), "Saved")
+  sheetEvent(Session.get("mySheetId"), "ownerSaved")
   lineIterator = 0 
   saveData = $("#HOT").handsontable('getData');
   numLines = saveData.length

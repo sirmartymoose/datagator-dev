@@ -16,6 +16,8 @@ apse" data-target="#navigation">
                
             </div>
             <div class="collapse navbar-collapse" id="navigation">
+                  <div class = 'row'>
+                        <div class="col-md-8">
                 <ul class="nav navbar-nav">
                     {{#if currentUser}}
                               {{#if currentUser}}
@@ -28,9 +30,13 @@ apse" data-target="#navigation">
                     
                     {{/if}}
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                </div>
+                <div class='col-md-4'>
+                <ul class="nav navbar-nav">
                     {{> loginButtons}}
                 </ul>
+                </div>
+            </div>
             </div>
         </div>
     </nav>

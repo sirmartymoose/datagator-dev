@@ -25,3 +25,8 @@ Router.route('/sharedSheets/:_id', {
 Router.route('/sharedSheets', function () {
   this.render('sharedSheets');
 });
+
+
+Router.route('/admin/sheetHistory', function () {
+  this.render('admin_sheetHistory');
+});
