@@ -66,9 +66,15 @@ $(document).ready(function(){
       if (error) {
         "ERROR"
       } else {
-        console.log(result[0]['sheetOwnerEmail'])
-        $("#results").append(result[0]['sheetOwnerEmail'])
-        $("#results").append(showSheets(result))
+          if (result.length > 0){
+                    $("#results").append(result[0]['sheetOwnerEmail'])
+                    $("#results").append(showSheets(result))
+            
+          } else {
+                  $("#results").append('<h3> No Sheets shared with you yet </h3>')
+                  
+            
+          }
         
       }
   });
