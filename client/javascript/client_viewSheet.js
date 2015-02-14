@@ -3,52 +3,23 @@ if (Meteor.isClient) {
   
 
   Template.viewSheet.rendered = function () {
-        
-        
-        sheetEvent(Session.get("mySheetId"), "ownerLoaded")
-    
-          function logEvent(ActionTemplate, ActionMessage, ActionSheetId){
-          actionUserId = Meteor.userId() 
-          var currentDate = new Date(); 
-          logEvent = {actionDate: currentDate, actionUserId: actionUserId, actionSheetId: ActionSheetId,  actionTemplate: ActionTemplate, actionMessage: ActionMessage }
-          userActions.insert(logEvent)
-          
-      }
-    
-      logEvent('viewSheet', 'Rendered: viewSheet.js', Session.get("mySheetId"))
-      
-    
-
     
     
+    // redundant. Needs refactoring.    
       thisSheetId = Session.get('mySheetId')
-          mySheetId = Session.get("mySheetId")
-    console.log(mySheetId)
-    
-    sheetId = mySheetId;
+      mySheetId = thisSheetId
+      //console.log(mySheetId)
+      sheetId = mySheetId;
 
+    
+    // Unclear. Remove priority 1
     sheetOwnerAuthor = "sirmartymoosez"
     
-    //myid = this.params._id
-    
 
+    // sheet Definitions data
+       Sheets = sheetDefinitions.findOne({_id: sheetId})
     
- Sheets = sheetDefinitions.findOne({_id: sheetId})
     
-    
-  
-
-    
-   // console.log(Sheets)
- 
- 
- 
- 
- //console.log(getHot_dataSchema())
- 
- //console.log(getHot_colHeaders(true))
- //console.log(getHot_columns(true))
- 
  
  //Start  Share Functions
  
@@ -104,33 +75,38 @@ if (Meteor.isClient) {
       
       
     $(document).ready(function(){
-       //console.log(sheetHistory_getCreatedDate(Session.get("mySheetId")))
-       console.log(sheetHistory_getHistory(Session.get("mySheetId")))
-       //console.log(sheetHistory_getNumberUpdatedUsers(Session.get("mySheetId")))
+          
       
-      $("#shareSheet").click(function(){
-      sheetEvent(Session.get("mySheetId"), "Shared")
-      populateShareForm()
-      })
-      
-      $("#addFormEmail").click(function(){
-            var inputString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' id='emailAddress' placeholder='Enter Email Adress'></div>"
-            $("#shareSheetForm").append(inputString)
-      })
+            // DOM Function for the Share Sheet Submit UI
+                  $("#shareSheet").click(function(){
+                        sheetEvent(Session.get("mySheetId"), "Shared")
+                        populateShareForm()
+                  })
       
       
+            // DOM Function to add a blank share function
+                  $("#addFormEmail").click(function(){
+                        var inputString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' id='emailAddress' placeholder='Enter Email Adress'></div>"
+                        $("#shareSheetForm").append(inputString)
+                  })
+                  
       
-      //getSharedEmails()
-             $("#submitShareForm").click(function(){
-               
-               console.log(addSharedEmails())
-               console.log(getSharedEmails())
-            })
+            //DOM Function to add shared emails to the DB
+                   $("#submitShareForm").click(function(){
+                        addSharedEmails()
+                  })
+                  
+            //DOM Function to toggle the left Nav
       
-      $("#sheetName").click(function(){
-        $("#leftNav").toggle()
-        
-      })
+                  $("#sheetName").click(function(){
+                    $("#leftNav").toggle()
+                    
+                  })
+                  
+            // DOM Function to hide left nav by default
+                  $("#leftNav").hide()
+            
+                  
       
       $("#sheetNameValue").html(getSheetTitle())
       
