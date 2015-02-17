@@ -118,7 +118,7 @@ if (Meteor.isClient) {
 
       ownerEmailRenderer = function(instance, td, row, col, prop, value, cellProperties) {
        Handsontable.renderers.TextRenderer.apply(this, arguments);
-        td.style.backgroundColor = "pink";
+        td.style.backgroundColor = "#f78f1e";
 
 };
       
@@ -150,10 +150,20 @@ if (Meteor.isClient) {
     
  $container.handsontable({
   data: getData(),
+  
+  columnSorting: true,
+  manualColumnResize: true,
+  manualRowResize: true,
+  manualColumnMove: true,
+  manualRowMove: true,
+  fixedColumnsLeft: 1,
+  
+  
   colHeaders: getHot_colHeaders(true),
   colWidths: getHot_colWidths(true), 
   dataSchema: getHot_dataSchema(),
   columns: getHot_columns(true),
+    stretchH: 'all',
   minSpareRows: 1
 
 });

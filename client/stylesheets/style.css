@@ -105,3 +105,19 @@
 		
 		background-color: green;
 	}
+	
+	#chatBox{
+		position: relative; 
+		float: left;
+		height: 300px;
+		width: 300px;
+	}
+	
+	
+	#chatContent{
+		position: relative; 
+		float: left; 
+		height: 300px;
+
+	}
+	
