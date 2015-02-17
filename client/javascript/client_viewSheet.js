@@ -116,6 +116,11 @@ if (Meteor.isClient) {
 
 };
 
+      ownerEmailRenderer = function(instance, td, row, col, prop, value, cellProperties) {
+       Handsontable.renderers.TextRenderer.apply(this, arguments);
+        td.style.backgroundColor = "pink";
+
+};
       
       
 
