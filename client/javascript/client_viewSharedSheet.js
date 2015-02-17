@@ -184,6 +184,7 @@ $("#saveSheet").click(function(){
   $(saveData).each(function(x,y){
       //sheetData.insert(y)
       dataId = y['_id']
+      y['sheetOwnerAuthor'] = sheetOwnerAuthor
       
       if(lineIterator < numLines - 1){
         sheetData.update({_id: dataId},y,{ upsert: true })

@@ -26,7 +26,8 @@ Template.createSheet.events({
 function assembleColumns(){
     
     colsArray = []
-    
+    defaultObj = {columnName: "sheetOwnerAuthor", whoView:"owner", whoEdit: "owner", dataType:"text"}
+    colsArray.push(defaultObj)
     $(".colGroup").each(function(){
         
         colName = $(this).find("#columnName").val(); 
