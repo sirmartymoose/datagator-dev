@@ -213,7 +213,7 @@ if (Meteor.isClient) {
                 
                 if (y['sharedFlag'] == 1){
                     shareValue = "Shared"
-                    shareTimeString = y['sharedTime'].getMonth() + 1 + "/" + y['sharedTime'].getDate()
+                    shareTimeString = mongo_displayDate( y['sharedTime']) 
                     shareTime = shareTimeString
                     uniqueSaved = y['uniqeSavedCount'] + " Contribution"
                     pendingGuest = y['pendingGuestCount'] + " Pending"
@@ -227,7 +227,7 @@ if (Meteor.isClient) {
                 }
                 
                 
-                showTimeFullString = showTimeFull.getMonth() + 1 + "/" + showTimeFull.getDate()
+                showTimeFullString = mongo_displayDate(showTimeFull)
                 
                 $("#results").append(showSheet(sheetURI, y['sheetTitle'], showTimeFullString,  shareValue, shareTime, uniqueSaved, pendingGuest))
                 
