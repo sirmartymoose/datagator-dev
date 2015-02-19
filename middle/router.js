@@ -30,3 +30,8 @@ Router.route('/sharedSheets', function () {
 Router.route('/admin/sheetHistory', function () {
   this.render('admin_sheetHistory');
 });
+
+
+Router.route('/listOwnedSheets', function () {
+  this.render('listOwnedSheets');
+});
