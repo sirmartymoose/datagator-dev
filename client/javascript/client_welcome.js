@@ -5,10 +5,12 @@ if (Meteor.isClient) {
       
 
       
-      
     $(document).ready(function(){
           
-          
+                $('#testPop').popover({content: "bottom"})
+                $('#help').popover({content: "Create a new sheet to share with others"})
+                
+      
         function welcome_getOwnedSheets(){
             console.log("getOwnedSheets Called")
           

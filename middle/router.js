@@ -35,3 +35,8 @@ Router.route('/admin/sheetHistory', function () {
 Router.route('/listOwnedSheets', function () {
   this.render('listOwnedSheets');
 });
+
+
+Router.route('/chat', function () {
+  this.render('chat');
+});

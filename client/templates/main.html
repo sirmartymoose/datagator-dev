@@ -19,27 +19,35 @@ apse" data-target="#navigation">
                   <div class = 'row'>
                         <div class="col-md-8">
                 <ul class="nav navbar-nav">
+
                     {{#if currentUser}}
                               {{#if currentUser}}
-  <li>  <a href="/"> Home </a></li>
-  <li><a href="/sheets"> List Sheets </a></li>
-  <li><a href="/sharedSheets"> Shared Sheets </a></li>
+                                <li id='mainLogo' >  <img src='/dc3finfin.png' height="30"/></li>
+  <li >  <a href="/"> <div class='navLink'>Home</div></a></li>
+  <li>  <a href="/listOwnedSheets"><div class='navLink'> Your Sheets</div></a></li>
+  <li ><a href="/sharedSheets"> <div class='navLink'>Shared Sheets</div> </a></li>
  
-  <li>  <a href="/create"> Create New</a></li>
-  <li>  <a href="/listOwnedSheets"> BETA: New List Sheets</a></li>
+  <li>  <a href="/create"><div class='navLink'>Create New</div> </a></li>
+
     {{/if}}
                     
                     {{/if}}
                 </ul>
                 </div>
-                <div class='col-md-4'>
+                <div class='col-md-2'></div>
+                <div class='col-md-2'>
                 <ul class="nav navbar-nav">
+                      <div id='loginPlace'>
+                      <div class='navLink'>
+                          <div id="rightFloat">
                     {{> loginButtons}}
+                        </div>
+                    </div>
+                    </div>
                 </ul>
                 </div>
             </div>
             </div>
         </div>
     </nav>
-
   </body>

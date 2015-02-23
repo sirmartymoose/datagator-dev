@@ -121,3 +121,67 @@
 
 	}
 	
+	
+	.navbar-default{
+		
+		background-color: #2c9552;
+		color: white;
+	}
+	
+		.panel-heading{
+		
+		color: white;
+	}
+	
+	
+	.panel-default > .panel-heading {
+
+}
+	
+.navLink {
+	color: white;
+}
+
+.login-link-text{
+	color: white;
+	position: relative; 
+	float: right;
+	top: 15px;
+	
+}
+
+#loginPlace{
+	
+	position:relative;
+	float: right;
+}
+
+
+#rightFloat{
+		position:relative;
+	float: right;	
+	
+}
+
+.panel-default > .panel-heading {
+color: black;
+background-color: #dfdfdf;
+border-color: #bfbfbf;
+}
+
+.page-header {
+
+margin: 0px;
+}
+
+#mainLogo {
+position: relative;
+top: 10px;
+margin-right: 30px;
+}
+
+#help {
+position: relative; 
+bottom: 3px;
+height: 10px; 
+}
