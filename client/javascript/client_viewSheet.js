@@ -72,7 +72,19 @@ if (Meteor.isClient) {
  
  // End Share Functions
  
-      
+ // Start Email functions 
+ 
+ function client_email_notifyShared_newUser(){
+ 
+ Meteor.call('email_notifyShared_newUser',
+            'dave@datagator.us',
+            'sirmartymoose@gmail.com',
+            'Hello from Meteor!',
+            'This is a test of Email.send.');
+            
+ }
+ 
+ // End email functions
       
     $(document).ready(function(){
           
@@ -94,6 +106,7 @@ if (Meteor.isClient) {
             //DOM Function to add shared emails to the DB
                    $("#submitShareForm").click(function(){
                         addSharedEmails()
+                        client_email_notifyShared_newUser()
                   })
                   
             //DOM Function to toggle the left Nav

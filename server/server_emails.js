@@ -8,11 +8,31 @@ Meteor.startup(function () {
   console.log(mailString)
   process.env.MAIL_URL = mailString;
   
-  
+  /*
       Email.send({
       to: "sirmartymoose@gmail.com",
       from: "dave@datagator.us",
       subject: "TEST EMAIL",
       text: "TEST CONTENT"
     });
+    
+    */
+});
+
+
+
+
+Meteor.methods({
+  email_notifyShared_newUser: function (to, from, subject, text) {
+    check([to, from, subject, text], [String]);
+
+    this.unblock();
+
+    Email.send({
+      to: to,
+      from: from,
+      subject: subject,
+      text: text
+    });
+  }
 });
