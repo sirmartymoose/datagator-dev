@@ -75,12 +75,15 @@ if (Meteor.isClient) {
  // Start Email functions 
  
  function client_email_notifyShared_newUser(){
+       
+       var em_title = "DataGator: Someone has shared a sheet with you"
+       var em_content = "A user has shared some content with you on datagator. <h1> test </h1>"
  
  Meteor.call('email_notifyShared_newUser',
-            'dave@datagator.us',
             'sirmartymoose@gmail.com',
-            'Hello from Meteor!',
-            'This is a test of Email.send.');
+            'dave@datagator.us',
+            em_title,
+            em_content);
             
  }
  
