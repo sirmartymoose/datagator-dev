@@ -3,6 +3,10 @@ if (Meteor.isClient) {
   
 
   Template.viewSheet.rendered = function () {
+        
+                  $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                  })
     
     
     // redundant. Needs refactoring.    
@@ -134,7 +138,7 @@ if (Meteor.isClient) {
 
       ownerEmailRenderer = function(instance, td, row, col, prop, value, cellProperties) {
        Handsontable.renderers.TextRenderer.apply(this, arguments);
-        td.style.backgroundColor = "#f78f1e";
+        td.style.backgroundColor = "#5db85b";
 
 };
       

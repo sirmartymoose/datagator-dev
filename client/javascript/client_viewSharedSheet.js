@@ -4,6 +4,12 @@ if (Meteor.isClient) {
 
   Template.viewSharedSheet.rendered = function () {
         
+                  $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                  })
+        
+        
+        
         sheetEvent(Session.get("mySheetId"), "guestLoaded")
     
           function logEvent(ActionTemplate, ActionMessage, ActionSheetId){

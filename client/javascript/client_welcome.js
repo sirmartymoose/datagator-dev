@@ -3,12 +3,18 @@ if (Meteor.isClient) {
 
   Template.welcome.rendered = function () {
       
+ if(Meteor.user() !== null){
+       
+       
 
       
     $(document).ready(function(){
           
-                $('#testPop').popover({content: "bottom"})
-                $('#help').popover({content: "Create a new sheet to share with others"})
+          $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+            })
+          
+
                 
       
         function welcome_getOwnedSheets(){
@@ -135,7 +141,7 @@ if (Meteor.isClient) {
           
           
       })
-
+}
       
   }
 

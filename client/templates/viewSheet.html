@@ -5,34 +5,12 @@
 			<div class='col-md-10'>
 				<div class="page-header">
 					<div class="row">
-						<div class='col-md-2' id="sheetName"><h3 id="sheetNameValue">Your Sheet</h3></div>
-						<div class='col-md-6' id="legendBox">
-							
-								<div class="row">
-										<div class="row">
-											<div class='col-md-4' id="legendText">  Edtiable </div>
-											<div class='col-md-4' id="legendOwner">  </div>
-											<div class='col-md-4' id="legendText"> Read Only </div>
-											<div class='col-md-4' id="legendGuest">  </div>
-								
-										</div>
-										<div class="row">
-											<div class='col-md-4' id="legendText"> Required </div>
-											<div class='col-md-4' id="legendRequired">  </div>
-											<div class='col-md-4' id="legendText"> Hidden </div>
-											<div class='col-md-4' id="legendHidden">  </div>
-								
-										</div>
-								
-								</div>
-							
-							
-							
-						</div>
+						<div class='col-md-8' id="sheetName"><h3 id="sheetNameValue">Your Sheet</h3></div>
+
 						<div class='col-md-4'> <h3 id="buttonGroup">
-							<button type="button" id='editSheet' class="btn btn-danger">Edit</button>
-							<button type="button" id='saveSheet' class="btn btn-primary">Save</button>
 							<button type="button" id='shareSheet' class="btn btn-success" data-toggle="modal" data-target="#myModal">Share</button>
+							<button type="button" id='saveSheet' class="btn btn-primary">Save</button>
+
 							
 							</h3></div>
 					</div>
@@ -40,46 +18,29 @@
 			</div>
 			<div class='col-md-1'> </div>
 		</div>
+		<div class="row">
+		  <div class="col-md-1"></div>
+		  <div class="col-md-6">
+		    
+		    						<div class="row" id='legendRow'>
+											<div class='col-md-2' id="legendText">  Editable  <img src='/qa.png' id='help' data-toggle="tooltip" data-placement="right" title="Only you (the owner) can edit this field"/></div>
+											<div class='col-md-2' id="legendOwner">  </div>
+											<div class='col-md-2' id="legendText"> Read Only <img src='/qa.png' id='help' data-toggle="tooltip" data-placement="right" title="This field cannot be edit. Only guests can edit"/></div>
+											<div class='col-md-2' id="legendGuest">  </div>
+											<div class='col-md-2' id="legendText"> Hidden <img src='/qa.png' id='help' data-toggle="tooltip" data-placement="right" title="This field is only visible to you. Your guests cannot see this data."/> </div>
+											<div class='col-md-2' id="legendHidden">  </div>
+								
+										</div>
+		    
+		  </div>
+		  <div class="col-md-3"></div>
+		  
+		</div>
   <div class="row">
       <div class="col-md-1"></div>
       
         <div class="col-md-3" id="leftNav">
-<div class="panel panel-primary" >
-  <!-- Default panel contents -->
-  <div class="panel-heading">Your Responses</div>
-  <div class="panel-body">
-      <div class="row" id="chatBox">
-      <div class="col-md-12" id="chatContent">
-      <div class='row'> 
-            <div class='col-md-6'> left</div>
-            <div class='col-md-6'> right </div>
-      </div>
-      <div class='row'> 
-            <div class='col-md-6'> left</div>
-            <div class='col-md-6'> right </div>
-      </div>
-      </div>
-</div>
-      
-            <div class='row'> 
-            <div class='col-md-10'> <input type="text"></div>
-            <div class='col-md-2'>    <button class="button button-primary">Send</button></div>
-      </div>
 
-
-    
-  </div>
-
-  <!-- List group -->
- <!-- <ul class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul> -->
-
-</div> 
   	
   </div>
   <div class="col-md-6"><div id="HOT"></div></div>

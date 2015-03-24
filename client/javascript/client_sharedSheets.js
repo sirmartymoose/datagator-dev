@@ -3,6 +3,10 @@ if (Meteor.isClient) {
   userId = (Meteor.userId())
   console.log(userId)
   Template.sharedSheets.rendered = function () {
+                      $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                  })
+        
 
 
    

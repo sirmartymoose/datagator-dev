@@ -47,7 +47,7 @@
 	
 	#legendHidden{
 		border: solid black 1px; 
-		background-color: #e6add8;
+		background-color: #77bcd9;
 		width: 15px; 
 		height: 20px;
 		margin-top: 5px;
@@ -185,3 +185,13 @@ position: relative;
 bottom: 3px;
 height: 10px; 
 }
+
+
+	#legendRow{
+		position: relative;
+
+
+		padding: 20px; 
+
+		
+	}

@@ -3,6 +3,11 @@ if (Meteor.isClient) {
   userId = (Meteor.userId())
   console.log(userId)
   Template.listSheets.rendered = function () {
+    
+                      $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                  })
+        
 
 
    

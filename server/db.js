@@ -12,6 +12,7 @@ Meteor.methods({
         check(Meteor.userId(), String);
         check(sheetAttributes, {
             title: String,
+            contributions: Array, 
             columns: Array
         });
         
