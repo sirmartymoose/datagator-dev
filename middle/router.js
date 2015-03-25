@@ -56,5 +56,5 @@ dcLogout = function(){
 
 
 dcLogin = function(){
-    Router.go('/welcome');
+    Router.go('/');
 }
