@@ -10,7 +10,7 @@ Template.Login.events({
             if (Meteor.user()) {
                 // Redirect the user to where they're loggin into. Here, Router.go uses
                 // the iron:router package.
-                Router.go('dashboard');
+                Router.go('welcome');
             } else {
                 // If no user resulted from the attempt, an error variable will be available
                 // in this callback. We can output the error to the user here.
