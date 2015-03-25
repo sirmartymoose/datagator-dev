@@ -47,7 +47,9 @@ Router.route('/login', function () {
 });
 
 
-Meteor.logout(function() {
-  // Redirect to login
-  Router.go('/login');
-});
+dcLogout = function(){
+  Meteor.logout(function() {
+    // Redirect to login
+    Router.go('/login');
+  })
+}
