@@ -53,3 +53,8 @@ dcLogout = function(){
     Router.go('/login');
   })
 }
+
+
+dcLogin = function(){
+    Router.go('/welcome');
+}
