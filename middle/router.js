@@ -40,3 +40,10 @@ Router.route('/listOwnedSheets', function () {
 Router.route('/chat', function () {
   this.render('chat');
 });
+
+
+Router.route('/login', function () {
+  this.render('Login');
+});
+
+
