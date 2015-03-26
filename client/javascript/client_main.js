@@ -1,4 +1,8 @@
 
+if (Meteor.isClient) {
+  
+
+  Template.loginButtons.rendered = function () {
       
       console.log("CLIENT MAIN LOADED")
          
@@ -7,3 +11,6 @@
             dcLogout()
       })
       
+  }
+
+}
