@@ -4,7 +4,11 @@ Router.route('/sheets', function () {
 });
 
 Router.route('/', function () {
+  if(Meteor.user == null){
+    this.render('landing')
+  } else {
   this.render('welcome');
+  }
 });
 
 Router.route('/create', function () {
