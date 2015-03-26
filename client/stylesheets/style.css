@@ -211,6 +211,6 @@ height: 10px;
 	}
 	
 	#colFormWrapper{
-		
-		background-color: pink;
+		height: 400px;
+		overflow: auto;
 	}
