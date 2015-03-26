@@ -5,9 +5,7 @@ if (Meteor.isClient) {
     dcLogin()      
   })
   
-  if(Meteor.user() == null){
-        dcReRoute()
-  }
+
   
 
   Template.loginButtons.rendered = function () {
