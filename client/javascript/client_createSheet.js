@@ -63,9 +63,7 @@ function assembleColumns(){
 								"<label for='columnName'>Data Type</label>" +
 								"<select class='form-control' id='dataType'>" +
 									"<option value='text'>Text</option>" +
-									"<option value='integer'>Integer</option>" +
-									"<option value='decimal'>Decimal</option>" +
-									"<option value='date'>Date</option>" +
+
 								"</select>" +
 							"</div>" +
 							
@@ -86,7 +84,7 @@ function assembleColumns(){
 								"</select>" +
 							"</div>" +
 							
-							"<div class='form-group'>" +
+							"<div hidden class='form-group'>" +
 								"<label for='columnName'>Required</label>" +
 								"<div class='checkbox'>" +
 									"<label> " +
