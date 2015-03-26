@@ -3,16 +3,24 @@ Router.route('/sheets', function () {
   this.render('listSheets');
 });
 
+Router.route('/landing', function () {
+  this.render('landing');
+});
+
 Router.route('/', function () {
   if(Meteor.user == null){
-    this.render('landing')
+    dcReRoute()
   } else {
   this.render('welcome');
   }
 });
 
 Router.route('/create', function () {
+    if(Meteor.user == null){
+   dcReRoute()
+  } else {
   this.render('createSheet');
+  }
 });
 
 Router.route('/posts/:_id', {
