@@ -195,3 +195,15 @@ height: 10px;
 
 		
 	}
+	
+	
+	.accounts-dialog{
+		width:220px;
+		
+	}
+	
+	#login-buttons-password{
+		background-color: #2c9552;
+		border: solid #2c9552 1px;
+		
+	}
