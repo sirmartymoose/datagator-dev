@@ -57,11 +57,6 @@ dcLogout = function(){
 
 dcLogin = function(){
     Router.go('/');
+    console.log("HI")
 }
 
-$("#login-name-link").click(function(){
-  console.log($("#login-buttons-logout"))
-  $("#login-buttons-logout").click(function(){
-    console.log('hi')
-  })
-})
