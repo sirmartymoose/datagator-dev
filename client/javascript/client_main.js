@@ -2,10 +2,12 @@
 if (Meteor.isClient) {
   
   Accounts.onLogin(function(){
-    console.log("HERE WE GO")
-    console.log("AGAIN")
     dcLogin()      
   })
+  
+  if(Meteor.user() == null){
+        dcReRoute()
+  }
   
 
   Template.loginButtons.rendered = function () {

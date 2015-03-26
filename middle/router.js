@@ -60,3 +60,8 @@ dcLogin = function(){
     console.log("HI")
 }
 
+dcReRoute = function(){
+    Router.go('/landing');
+    console.log("HI")
+}
+
