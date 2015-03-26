@@ -73,6 +73,7 @@ dcLogin = function(){
 }
 
 dcReRoute = function(){
+  console.log("DCREROUTE CALLED")
     Router.go('/landing');
     console.log("HI")
 }

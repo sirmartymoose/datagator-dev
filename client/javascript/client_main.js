@@ -5,6 +5,10 @@ if (Meteor.isClient) {
     dcLogin()      
   })
   
+  
+  if(Meteor.user() == null){
+    dcReRoute()
+  }
 
   
 
