@@ -214,3 +214,16 @@ height: 10px;
 		height: 420px;
 		overflow: auto;
 	}
+	
+	#login-dropdown-list{
+		position:absolute;
+		left: -150px;
+	}
+	
+	#navbar-nav{
+		float: right;
+	}
+	
+	.navbar-nav{
+		float: right;
+	}
