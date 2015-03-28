@@ -26,9 +26,32 @@ if (Meteor.isClient) {
     
  
  //Start  Share Functions
+
+ // Start New Sharing Functionality
+      // Note: is being tested with console.log(getGridEmailValues()) so you will need to roll it back
+
+
+ getGridEmailValues = function(){
+     var outputObj = {}
+     var outputArray = []
+     var tableData = $("#HOT").handsontable('getData')
+     for (i=0; i<tableData.length - 1; i++){
+         outputArray.push(tableData[i]['sheetOwnerAuthor'])
+     }
+
+     outputArray = _.uniq(outputArray);
+     outputArray = _.filter(outputArray, function(num){ return num.length > 0; });
+
+     //outputObj['sharedEmails'] = outputArray
+     return outputArray
+ }
+
+
+
  
     function addSharedEmails(){
-      
+
+
       sharedEmailArray = []
       
       
@@ -49,8 +72,12 @@ if (Meteor.isClient) {
     
     
     function getSharedEmails(){
-      shareResult = sheetDefinitions.find({_id: Session.get('mySheetId') }, {fields: {sharedEmails: 1}}).fetch()
-      return shareResult
+        console.log(getGridEmailValues())
+      //shareResult = sheetDefinitions.find({_id: Session.get('mySheetId') }, {fields: {sharedEmails: 1}}).fetch()
+      shareResult = getGridEmailValues()
+
+
+        return shareResult
       
      
    
@@ -62,14 +89,14 @@ if (Meteor.isClient) {
 
       $("#shareSheetForm").html("")
       var myShares = getSharedEmails()
-       $(myShares[0]['sharedEmails']).each(function(x,y){
+       $(myShares).each(function(x,y){
             formString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' disabled id='emailAddress' placeholder='"+ y + "' value = '"+y+ " ' ></div>"
             $("#shareSheetForm").append(formString)
          
        })
 
-        var inputString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' id='emailAddress' placeholder='Enter Email Adress'></div>"
-         $("#shareSheetForm").append(inputString)
+  //      var inputString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' id='emailAddress' placeholder='Enter Email Adress'></div>"
+  //       $("#shareSheetForm").append(inputString)
       
     }
  
@@ -94,8 +121,8 @@ if (Meteor.isClient) {
  // End email functions
       
     $(document).ready(function(){
-          
-      
+
+
             // DOM Function for the Share Sheet Submit UI
                   $("#shareSheet").click(function(){
                         sheetEvent(Session.get("mySheetId"), "Shared")
