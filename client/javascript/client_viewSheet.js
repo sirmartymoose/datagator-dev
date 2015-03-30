@@ -55,13 +55,12 @@ if (Meteor.isClient) {
       sharedEmailArray = []
       
       
-      $(".form-group").each(function(){
-        var emailValue = $(this).find("#emailAddress").val()
-        sharedEmailArray.push(emailValue)
+
+        sharedEmailArray = getGridEmailValues()
         
         
         
-      })
+
       
       sharedEmails = {sharedEmails: sharedEmailArray}
       sheetDefinitions.update({_id: Session.get('mySheetId')}, {$set: sharedEmails})
@@ -123,12 +122,25 @@ if (Meteor.isClient) {
     $(document).ready(function(){
 
 
+        $("#shareSheet").click(function () {
+            var sampleDataArray = getSharedEmails()
+            var shareLength = sampleDataArray.length;
+            if (shareLength > 0) {
+                var emailListOutputHTML = ''
+                $(sampleDataArray).each(function(x,y){
+                    var emailLine = '<li>' + y + '</li>'
+                    emailListOutputHTML = emailListOutputHTML + emailLine
+
+                })
+                $("#emailList").html(emailListOutputHTML)
+            } else {
+
+                // $("#emailList").html(sampleDataArray)
+            }
+        })
+
             // DOM Function for the Share Sheet Submit UI
-                  $("#shareSheet").click(function(){
-                        sheetEvent(Session.get("mySheetId"), "Shared")
-                        populateShareForm()
-                  })
-      
+
       
             // DOM Function to add a blank share function
                   $("#addFormEmail").click(function(){

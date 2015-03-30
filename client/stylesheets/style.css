@@ -227,3 +227,19 @@ height: 10px;
 	.navbar-nav{
 		float: right;
 	}
+
+
+    #shareSheetContent{
+
+        position:relative;
+
+        margin: 10px;
+    }
+
+    #helpPromptImage{
+
+        position:relative;
+
+        top: 20px;
+        right: 20px;
+    }

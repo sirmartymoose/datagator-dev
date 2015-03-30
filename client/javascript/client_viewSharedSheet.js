@@ -184,6 +184,7 @@ hotInstance = $("#HOT").handsontable('getInstance');
 
 $("#saveSheet").click(function(){
       sheetEvent(Session.get("mySheetId"), "guestSaved")
+      call_sheetUpdateContributions(Session.get("mySheetId"))
   lineIterator = 0 
   saveData = $("#HOT").handsontable('getData');
   numLines = saveData.length

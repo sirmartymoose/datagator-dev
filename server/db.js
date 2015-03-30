@@ -12,7 +12,8 @@ Meteor.methods({
         check(Meteor.userId(), String);
         check(sheetAttributes, {
             title: String,
-            contributions: Array, 
+            contributions: Array,
+            sharedEmails: Array,
             columns: Array
         });
         
