@@ -17,8 +17,9 @@ if (Meteor.isClient) {
 
 $(document).ready(function(){
   
-
-       
+    client_listSharedSheets = function() {
+        Meteor.call('listSharedSheets', Meteor.user().emails[0].address, function(err, result){console.log(result)})
+    }
   
     function showSheets(res){
       htmlResults = ""
@@ -66,12 +67,12 @@ $(document).ready(function(){
     
     console.log("I AM DOC READY")
     
-      Meteor.call('sharedSheets', userId, function (error, result) {
+      Meteor.call('listSharedSheets', Meteor.user().emails[0].address, function (error, result) {
       if (error) {
         "ERROR"
       } else {
           if (result.length > 0){
-                    $("#results").append(result[0]['sheetOwnerEmail'])
+                    //$("#results").append(result[0]['sheetOwnerEmail'])
                     $("#results").append(showSheets(result))
             
           } else {
