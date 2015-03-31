@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57cff16b-fb1a-46ec-ae8c-8dd61c07362e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js" afterPath="$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/viewOwnedSheet.html" afterPath="$PROJECT_DIR$/client/templates/viewOwnedSheet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/main.html" afterPath="$PROJECT_DIR$/client/templates/main.html" />
     </list>
     <ignored path="datagator-dev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="986">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3419355" vertical-offset="453" max-vertical-offset="986">
+              <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -108,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewOwnedSheet.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewOwnedSheet.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/viewOwnedSheet.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.643026" vertical-offset="578" max-vertical-offset="2125">
-              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+            <state vertical-scroll-proportion="-4.6363635" vertical-offset="578" max-vertical-offset="2125">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -143,9 +141,9 @@
         <option value="$PROJECT_DIR$/client/javascript/client_listSharedSheets.js" />
         <option value="$PROJECT_DIR$/client/javascript/client_main.js" />
         <option value="$PROJECT_DIR$/client/javascript/client_viewSharedSheet.js" />
-        <option value="$PROJECT_DIR$/client/templates/main.html" />
         <option value="$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js" />
         <option value="$PROJECT_DIR$/client/templates/viewOwnedSheet.html" />
+        <option value="$PROJECT_DIR$/client/templates/main.html" />
       </list>
     </option>
   </component>
@@ -757,14 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="986">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/javascript/client_welcome.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.034623217" vertical-offset="289" max-vertical-offset="1530">
@@ -783,8 +773,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/viewOwnedSheet.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.643026" vertical-offset="578" max-vertical-offset="2125">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        <state vertical-scroll-proportion="-4.6363635" vertical-offset="578" max-vertical-offset="2125">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3419355" vertical-offset="453" max-vertical-offset="986">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
           <folding />
         </state>
       </provider>
