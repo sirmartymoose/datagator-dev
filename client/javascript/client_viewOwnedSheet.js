@@ -50,7 +50,7 @@ if (Meteor.isClient) {
 
 
         function addSharedEmails() {
-
+            console.log("AddSharedEmails function initiated")
 
             sharedEmailArray = []
 
