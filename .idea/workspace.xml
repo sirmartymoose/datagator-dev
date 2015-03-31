@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57cff16b-fb1a-46ec-ae8c-8dd61c07362e" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\javascript\admin_sheetHistory.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\javascript\client_all.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\javascript\client_listSheets.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\javascript\client_login.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\javascript\dev_chat.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\templates\admin_sheetHistory.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\templates\dev_chat.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\templates\dev_listOwnedSheets.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\templates\listSheets.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\templates\login.html" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\javascript\client_sharedSheets.js" afterPath="$PROJECT_DIR$/client/javascript/client_listSharedSheets.js" />
-      <change type="MOVED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\javascript\client_viewSheet.js" afterPath="$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js" />
-      <change type="MOVED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\javascript\dev_listOwnedSheets.js" afterPath="$PROJECT_DIR$/client/javascript/client_listOwnedSheets.js" />
-      <change type="MOVED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\templates\sharedSheets.html" afterPath="$PROJECT_DIR$/client/templates/listSharedSheets.html" />
-      <change type="MOVED" beforePath="C:\Users\David Crawford\WebstormProjects\datagator-dev\client\templates\viewSheet.html" afterPath="$PROJECT_DIR$/client/templates/viewOwnedSheet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/javascript/client_createSheet.js" afterPath="$PROJECT_DIR$/client/javascript/client_createSheet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/javascript/client_main.js" afterPath="$PROJECT_DIR$/client/javascript/client_main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/javascript/client_viewSharedSheet.js" afterPath="$PROJECT_DIR$/client/javascript/client_viewSharedSheet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/main.html" afterPath="$PROJECT_DIR$/client/templates/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/sheetReferenceData.js" afterPath="$PROJECT_DIR$/lib/sheetReferenceData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js" afterPath="$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/viewOwnedSheet.html" afterPath="$PROJECT_DIR$/client/templates/viewOwnedSheet.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="datagator-dev.iws" />
@@ -56,21 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3419355" vertical-offset="453" max-vertical-offset="986">
-              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="client_viewOwnedSheet.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1120" max-vertical-offset="4318">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="986">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -126,6 +98,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="client_viewOwnedSheet.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.137931" vertical-offset="361" max-vertical-offset="4403">
+              <caret line="30" column="846" selection-start-line="30" selection-start-column="846" selection-end-line="30" selection-end-column="846" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewOwnedSheet.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/templates/viewOwnedSheet.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.643026" vertical-offset="578" max-vertical-offset="2125">
+              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -150,9 +142,10 @@
         <option value="$PROJECT_DIR$/client/javascript/client_listOwnedSheets.js" />
         <option value="$PROJECT_DIR$/client/javascript/client_listSharedSheets.js" />
         <option value="$PROJECT_DIR$/client/javascript/client_main.js" />
-        <option value="$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js" />
         <option value="$PROJECT_DIR$/client/javascript/client_viewSharedSheet.js" />
         <option value="$PROJECT_DIR$/client/templates/main.html" />
+        <option value="$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js" />
+        <option value="$PROJECT_DIR$/client/templates/viewOwnedSheet.html" />
       </list>
     </option>
   </component>
@@ -218,6 +211,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datagator-dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datagator-dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,6 +338,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesJavaScript 1.5" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/David Crawford/WebstormProjects/datagator-dev/client/javascript/client_welcome.js" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -425,27 +433,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32333767" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32333767" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.209375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39895698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39895698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -639,18 +647,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/viewOwnedSheet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39716312" vertical-offset="2807" max-vertical-offset="3230">
-          <caret line="175" column="81" selection-start-line="175" selection-start-column="70" selection-end-line="175" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/viewSharedSheet.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.076923" vertical-offset="228" max-vertical-offset="884">
           <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -708,14 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/javascript/client_welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/javascript/client_listOwnedSheets.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
@@ -748,14 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1120" max-vertical-offset="4318">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/javascript/client_viewSharedSheet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3519">
@@ -774,8 +759,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3419355" vertical-offset="453" max-vertical-offset="986">
-          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="986">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/javascript/client_welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.034623217" vertical-offset="289" max-vertical-offset="1530">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/javascript/client_viewOwnedSheet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.137931" vertical-offset="361" max-vertical-offset="4403">
+          <caret line="30" column="846" selection-start-line="30" selection-start-column="846" selection-end-line="30" selection-end-column="846" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/viewOwnedSheet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.643026" vertical-offset="578" max-vertical-offset="2125">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
           <folding />
         </state>
       </provider>

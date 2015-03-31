@@ -1,9 +1,5 @@
 <!-- define a template called welcomePage -->
 <template name="viewSheet">
-    <button type="button" id='shareSheet3' class="btn btn-success" data-toggle="modal" data-target="#myModal3">Share NO
-    </button>
-    <button type="button" id='shareSheet2' class="btn btn-success" data-toggle="modal" data-target="#myModal2">Share YES
-    </button>
     		<div class="row" id="pageTitle">
 			<div class='col-md-1'> </div>
 			<div class='col-md-10'>
@@ -54,69 +50,6 @@
 
 
 
-<!-- Modal -->
-
-
-    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Share with others to start gathering your data</h4>
-                </div>
-                <div class="modal-body">
-                    <form id="shareSheetForm">
-                        <div class="form-group">
-                            <div id="modalContent">
-
-
-                                <div class="row" id="shareSheetContent">
-                                    <div class="col-md-5">
-                                        <div class="row" id="shareSheetContentText">
-                                            <div class="col-md-12">
-
-                                                <h4> To share a sheet:</h4>
-                                                <p>
-                                                <li>Click into the first column</li>
-                                                <li>Type the email address</li>
-                                                <li>Click "Share"</li>
-                                                </p>
-
-
-                                            </div>
-
-
-
-                                        </div>
-
-
-                                    </div>
-                                    <div class="col-md-6" id="helpPromptImage">
-                                        <img src="images/helpPrompt.png" width="320"/>
-
-                                    </div>
-                                </div>
-
-
-
-
-
-                            </div>
-
-
-                        </div>
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-primary" id="gotIt" data-dismiss="modal">Got It!</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -126,6 +59,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Share with others and gather data</h4>
                 </div>
+                <div id="modalContentSwap">
                 <div class="modal-body">
                     <form id="shareSheetForm">
                         <div class="form-group">
@@ -175,6 +109,7 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-primary" id="submitShareForm">Share</button>
                 </div>
+                    </div>
             </div>
         </div>
     </div>
