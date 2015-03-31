@@ -1,4 +1,4 @@
-
+// Last Refactored March 31st
 if (Meteor.isClient) {
   
   Accounts.onLogin(function(){
@@ -10,15 +10,5 @@ if (Meteor.isClient) {
     dcReRoute()
   }
 
-  
 
-  Template.loginButtons.rendered = function () {
-      
-         
-      $("#login-buttons-logout").click(function(){
-            dcLogout()
-      })
-      
-  }
-
-}
+} // End is Client
