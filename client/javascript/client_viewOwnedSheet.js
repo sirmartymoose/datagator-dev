@@ -116,7 +116,7 @@ if (Meteor.isClient) {
         $(document).ready(function () {
 
 
-            $("#shareSheet").click(function () {
+            $("#shareSheet").on('click', function () {
 
 
                 var sampleDataArray = getSharedEmails()
