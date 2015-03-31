@@ -13,13 +13,13 @@ if (Meteor.isServer) {
         listSharedSheets: function(userEmail){
             console.log('listSharedSheets called')
             var outputObjectArray = []
-            var sharedData = sheetDefinitions.find({sharedEmails: userEmail}, {fields: {_id: 1, title: 1, "contributions.userEmail": 1, userId: 1, submitted: 1}}).fetch()
+            var sharedData = sheetDefinitions.find({sharedEmails: userEmail, {sort: {submitted: -1}}}, {fields: {_id: 1, title: 1, "contributions.userEmail": 1, userId: 1, submitted: 1}}).fetch()
             return sharedData
         }, 
         listWelcomeSharedSheets: function(userEmail){
             console.log('listSharedSheets called')
             var outputObjectArray = []
-            var sharedData = sheetDefinitions.find({sharedEmails: userEmail}, {fields: {_id: 1, title: 1, "contributions.userEmail": 1, userId: 1, submitted: 1}}).fetch()
+            var sharedData = sheetDefinitions.find({sharedEmails: userEmail, {limit: 2, sort: {submitted: -1}}}, {fields: {_id: 1, title: 1, "contributions.userEmail": 1, userId: 1, submitted: 1}}).fetch()
             return sharedData
         }
     });
