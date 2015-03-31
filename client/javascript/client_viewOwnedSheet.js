@@ -122,7 +122,8 @@ if (Meteor.isClient) {
                 var sampleDataArray = getSharedEmails()
                 var shareLength = sampleDataArray.length;
                 if (shareLength > 0) {
-                    $("#modalContentSwap").html(shareSnippetWithEmails)
+                    // Commenting out to fix but 17
+                    //$("#modalContentSwap").html(shareSnippetWithEmails)
                     var emailListOutputHTML = ''
                     $(sampleDataArray).each(function (x, y) {
                         var emailLine = '<li>' + y + '</li>'
@@ -131,8 +132,9 @@ if (Meteor.isClient) {
                     })
                     $("#emailList").html(emailListOutputHTML)
                 } else {
-
-                    $("#modalContentSwap").html(shareSnippet)
+                    // Commenting out to fix bug 17
+                    //$("#modalContentSwap").html(shareSnippet) 
+                    
                 }
             })
 
