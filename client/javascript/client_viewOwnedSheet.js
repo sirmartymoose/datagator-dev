@@ -148,6 +148,7 @@ if (Meteor.isClient) {
 
             //DOM Function to add shared emails to the DB
             $("#submitShareForm").click(function () {
+                console.log("submit share form button clicked")
                 addSharedEmails()
                 client_email_notifyShared_newUser()
             })
