@@ -1,7 +1,16 @@
 if (Meteor.isClient) {
 
 
+
     Template.viewSheet.rendered = function () {
+        Meteor.subscribe("ownerSheetDefinitions");
+        console.log('subscribed to ownerSheetDefinitions')
+        Meteor.subscribe("ownerSheetData");
+        console.log('subscribed to ownerSheetData')
+
+
+
+
 
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
@@ -31,6 +40,7 @@ if (Meteor.isClient) {
         shareSnippet = "<div class='modal-body'> <form id='shareSheetForm'>              <div class='form-group'>                <div id='modalContent'>                      <div class='row' id='shareSheetContent'>                    <div class='col-md-5'>                      <div class='row' id='shareSheetContentText'>                        <div class='col-md-12'>                            <h4> To share a sheet:</h4>                          <p>                          <li>Click into the first column</li>                          <li>Type the email address</li>                          <li>Click 'Share'</li>                          </p>                            </div>                            </div>                        </div>                    <div class='col-md-6' id='helpPromptImage'>                      <img src='../helpPrompt.png' width='320'/>                      </div>                  </div>                          </div>                  </div>            </form>            </div>          <div class='modal-footer'>              <button type='button' class='btn btn-primary' id='gotIt' data-dismiss='modal'>Got It!</button>          </div>"
 
         shareSnippetWithEmails = "                <div class='modal-body'>                      <form id='shareSheetForm'>                          <div class='form-group'>                              <div id='modalContent'>                                      <div class='row' id='shareSheetContent'>                                      <div class='row'>                                          <div class='col-md-1'></div>                                          <div class='col-md-11'>                                                <div class='row'>                                                  <h4>Share With the following Email Addresses:</h4>                                                  <ul>                                                      <div id='emailList'></div>                                                  </ul>                                              </div>                                              <div class='row'>                                                  <h4>What Happens Next?</h4>                                                  <ol>                                                      <li>User will receive email notification with a link to your sheet</li>                                                      <li>User will signup (if new user) and sign in</li>                                                      <li>User will fill out and save your sheet</li>                                                      <li>You can track progress in the dashboard</li>                                                    </ol>                                                </div>                                          </div>                                      </div>                                      </div>                                        </div>                              </div>                      </form>                    </div>                  <div class='modal-footer'>                      <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>                      <button type='button' class='btn btn-primary' id='submitShareForm'>Share</button>                  </div>"
+
         getGridEmailValues = function () {
             var outputObj = {}
             var outputArray = []

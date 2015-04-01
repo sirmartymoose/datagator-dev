@@ -3,6 +3,10 @@ if (Meteor.isClient) {
   
 
   Template.viewSharedSheet.rendered = function () {
+      Meteor.subscribe("guestSheetDefinitions", Meteor.user()['emails'][0]['address']);
+      console.log('subscribed to guestSheetDefinitions')
+      Meteor.subscribe("guestSheetData", Meteor.user()['emails'][0]['address']);
+      console.log('subscribed to guestSheetData')
 
       $(function () {
           $('[data-toggle="tooltip"]').tooltip()

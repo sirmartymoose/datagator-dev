@@ -1,7 +1,18 @@
 if (Meteor.isClient) {
 
     Template.welcome.rendered = function () {
-      
+
+        Meteor.subscribe("guestSheetDefinitions", Meteor.user()['emails'][0]['address']);
+        console.log('subscribed to guestSheetDefinitions')
+        Meteor.subscribe("guestSheetData", Meteor.user()['emails'][0]['address']);
+        console.log('subscribed to guestSheetData')
+        Meteor.subscribe("ownerSheetDefinitions");
+        console.log('subscribed to ownerSheetDefinitions')
+        Meteor.subscribe("ownerSheetData");
+        console.log('subscribed to ownerSheetData')
+
+
+
         if(Meteor.user() !== null) {
 
 

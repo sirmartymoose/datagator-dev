@@ -5,7 +5,7 @@ Template.createSheet.events({
         e.preventDefault();
         sheetCols = assembleColumns();
         var sheet = {
-            //sheetOwnerId: Meteor.userId(),
+            sheetOwnerId: Meteor.userId(),
             title: $(e.target).find('[name=title]').val(),
             contributions: [],
             sharedEmails: [],
