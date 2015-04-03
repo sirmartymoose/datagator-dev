@@ -1,5 +1,5 @@
 {
-  // Server authentication info
+  // STAGING: Server authentication info
   "servers": [
     {
       "host": "52.5.92.252",

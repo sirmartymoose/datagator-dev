@@ -1,4 +1,4 @@
-  /*
+  
 Meteor.startup(function () {
    // format smtp://USERNAME:PASSWORD@HOST:PORT/   
   var emailUserName = "AKIAJ7D2SDNE5K7S6ZMA"
@@ -9,14 +9,7 @@ Meteor.startup(function () {
   console.log(mailString)
   process.env.MAIL_URL = mailString;
   
-  
-      Email.send({
-      to: "sirmartymoose@gmail.com",
-      from: "dave@datagator.us",
-      subject: "TEST EMAIL",
-      text: "TEST CONTENT"
-    });
-    
+
 
 });
 
@@ -38,4 +31,4 @@ Meteor.methods({
   }
 });
 
-    */
+    

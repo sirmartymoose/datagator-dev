@@ -4,7 +4,7 @@ if (Meteor.isClient) {
 
     Template.viewSheet.rendered = function () {
         Meteor.subscribe("ownerSheetDefinitions");
-        console.log('subscribed to ownerSheetDefinitions')
+        cLog('subscribed to ownerSheetDefinitions')
         Meteor.subscribe("ownerSheetData");
         console.log('subscribed to ownerSheetData')
 
@@ -66,10 +66,33 @@ if (Meteor.isClient) {
 
 
             sharedEmailArray = getGridEmailValues()
+            cLog("sharedEmailArray: " +sharedEmailArray)
 
 
             sharedEmails = {sharedEmails: sharedEmailArray}
+            cLog("session sheet id: " + Session.get('mySheetId'))
             sheetDefinitions.update({_id: Session.get('mySheetId')}, {$set: sharedEmails})
+            
+            // Begin Saving for 0.06 Release
+            
+                lineIterator = 0
+                saveData = $("#HOT").handsontable('getData');
+                numLines = saveData.length
+                $(saveData).each(function (x, y) {
+                    //sheetData.insert(y)
+                    dataId = y['_id']
+
+                    if (lineIterator < numLines - 1) {
+                        sheetData.update({_id: dataId}, y, {upsert: true})
+                        lineIterator = lineIterator + 1;
+                    }
+
+
+                })
+            
+            // End
+            
+            
             return sharedEmailArray
 
 
@@ -162,7 +185,7 @@ if (Meteor.isClient) {
             $("#submitShareForm").click(function () {
                 console.log("submit share form button clicked")
                 addSharedEmails()
-                client_email_notifyShared_newUser()
+                //client_email_notifyShared_newUser()
             })
 
             //DOM Function to toggle the left Nav
