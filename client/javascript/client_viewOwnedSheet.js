@@ -41,6 +41,11 @@ if (Meteor.isClient) {
 
         shareSnippetWithEmails = "                <div class='modal-body'>                      <form id='shareSheetForm'>                          <div class='form-group'>                              <div id='modalContent'>                                      <div class='row' id='shareSheetContent'>                                      <div class='row'>                                          <div class='col-md-1'></div>                                          <div class='col-md-11'>                                                <div class='row'>                                                  <h4>Share With the following Email Addresses:</h4>                                                  <ul>                                                      <div id='emailList'></div>                                                  </ul>                                              </div>                                              <div class='row'>                                                  <h4>What Happens Next?</h4>                                                  <ol>                                                      <li>User will receive email notification with a link to your sheet</li>                                                      <li>User will signup (if new user) and sign in</li>                                                      <li>User will fill out and save your sheet</li>                                                      <li>You can track progress in the dashboard</li>                                                    </ol>                                                </div>                                          </div>                                      </div>                                      </div>                                        </div>                              </div>                      </form>                    </div>                  <div class='modal-footer'>                      <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>                      <button type='button' class='btn btn-primary' id='submitShareForm'>Share</button>                  </div>"
 
+        nextStepsSnippetWithEmails = "<li>User will receive email notification with a link to your sheet</li><li>User will signup (if new user) and sign in</li> <li>User will fill out and save your sheet</li> <li>You can track progress in the dashboard</li>"
+        nextStepsSnippetNoEmails = "<li>Add email addresses in the first column of the grid</li><li>Click the share button again </li> <li>Any rows with email addresses the user will have access to</li> <li>You can track progress in the dashboard</li>"
+
+
+
         getGridEmailValues = function () {
             var outputObj = {}
             var outputArray = []
@@ -51,7 +56,8 @@ if (Meteor.isClient) {
 
             outputArray = _.uniq(outputArray);
             outputArray = _.filter(outputArray, function (num) {
-                return num.length > 0;
+                return !!num
+                //return num.length > 0;
             });
 
             //outputObj['sharedEmails'] = outputArray
@@ -148,6 +154,11 @@ if (Meteor.isClient) {
 
         $(document).ready(function () {
 
+            // Hide the modal that shows if nobody has shared
+
+            $("#noShareModal").hide()
+
+
 
             $("#shareSheet").on('click', function () {
 
@@ -155,23 +166,33 @@ if (Meteor.isClient) {
                 var sampleDataArray = getSharedEmails()
                 var shareLength = sampleDataArray.length;
                 if (shareLength > 0) {
-                    // Commenting out to fix but 17
-                    //$("#modalContentSwap").html(shareSnippetWithEmails)
+                    $("#nextSteps").html(nextStepsSnippetWithEmails)
+                    $("#submitShareForm").show()
                     var emailListOutputHTML = ''
-                    $(sampleDataArray).each(function (x, y) {
-                        var emailLine = '<li>' + y + '</li>'
-                        emailListOutputHTML = emailListOutputHTML + emailLine
-
-                    })
+                        $(sampleDataArray).each(function (x, y) {
+                            var emailLine = '<li>' + y + '</li>'
+                            emailListOutputHTML = emailListOutputHTML + emailLine
+                        })
+                    //nextStepsSnippetWithEmails
                     $("#emailList").html(emailListOutputHTML)
                 } else {
-                    // Commenting out to fix bug 17
-                    //$("#modalContentSwap").html(shareSnippet) 
+                    //nextStepsSnippetNoEmails
+                    $("#nextSteps").html(nextStepsSnippetNoEmails)
+                    $("#submitShareForm").hide()
+                    $("#emailList").html("You have not added any email addresses")
                     
                 }
             })
 
             // DOM Function for the Share Sheet Submit UI
+
+            // show Confirmation
+            function confirmShare(){
+                confirmSnippet = "<div class='alert alert-success' role='alert' id='confirmedShareSnippet'> <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> <span class='sr-only'>Confirmed:</span>Sheet Shared Succesfully! </div>"
+                    $("#alertSpace").html(confirmSnippet)
+                       // $("#confirmedShareSnippet").hide('blind', {}, 500)
+
+            }
 
 
             // DOM Function to add a blank share function
@@ -185,6 +206,7 @@ if (Meteor.isClient) {
             $("#submitShareForm").click(function () {
                 console.log("submit share form button clicked")
                 addSharedEmails()
+                confirmShare()
                 //client_email_notifyShared_newUser()
             })
 

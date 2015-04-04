@@ -248,3 +248,55 @@ height: 10px;
 	background-color: black;
 }
 
+
+#createSheetText{
+
+    font-size: 1.35em;
+    position: relative;
+    top: 6px;
+}
+
+    #welcomeEmptyText{
+
+        font-size: 1.35em;
+        position: relative;
+        /* top: 6px; */
+        left: 260px;
+        margin: 15px;
+        padding: 5px;
+    }
+
+
+    #login-buttons-open-change-password.login-button{
+     background-color: #2c9552;
+    }
+    #login-buttons-password.login-button{
+        background-color: #2c9552;
+    }
+    #login-buttons-password.login-button:hover{
+        background-color: #1da44e;
+    }
+    #login-buttons-logout.login-button{
+        background-color:#2c9552;
+
+    }
+
+    #login-buttons-open-change-password.login-button:hover{
+        background-color: #1da44e;
+    }
+
+    #login-buttons-logout.login-button:hover{
+        background-color:#1da44e;
+
+    }
+
+
+    .welcomeEmptyText{
+
+        font-size: 1.35em;
+        position: relative;
+        /* top: 6px; */
+        left: 260px;
+        margin: 15px;
+        padding: 5px;
+    }

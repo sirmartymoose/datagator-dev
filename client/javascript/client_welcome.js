@@ -74,7 +74,7 @@ if (Meteor.isClient) {
                     $("#sheetsYouShare_results").append(showSheets(result))
             
           } else {
-                  $("#sheetsYouShare_results").append('<p> No Sheets shared with you yet </p>')
+                  $("#sheetsYouShare_results").append('<p id="welcomeEmptyText"> No Sheets shared with you yet </p>')
                   
             
           }

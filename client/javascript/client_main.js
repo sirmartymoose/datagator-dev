@@ -11,4 +11,8 @@ if (Meteor.isClient) {
   }
 
 
+    $(document).ready(function() {
+        cLog("Client Main Doc Ready Loaded")
+    });
+
 } // End is Client
