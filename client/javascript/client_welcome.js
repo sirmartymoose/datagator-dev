@@ -1,15 +1,13 @@
 if (Meteor.isClient) {
 
     Template.welcome.rendered = function () {
+        
+
 
         Meteor.subscribe("guestSheetDefinitions", Meteor.user()['emails'][0]['address']);
-        console.log('subscribed to guestSheetDefinitions')
         Meteor.subscribe("guestSheetData", Meteor.user()['emails'][0]['address']);
-        console.log('subscribed to guestSheetData')
         Meteor.subscribe("ownerSheetDefinitions");
-        console.log('subscribed to ownerSheetDefinitions')
         Meteor.subscribe("ownerSheetData");
-        console.log('subscribed to ownerSheetData')
 
 
 
@@ -17,13 +15,10 @@ if (Meteor.isClient) {
 
 
 
-            //console.log(myOwnedSheets)
+
 
             $(document).ready(function() {
-                console.log("Doc ready welcome rendered")
-                myOwnedSheets = client_getUserSheetsWelcomePage()
-                console.log("myOwnedSheetsDefined")
-                showOwnedSheets(getUserSheetReferenceData(myOwnedSheets), "#sheetsYouOwn_results")
+
             
                 
     function showSheets(res){
@@ -65,12 +60,24 @@ if (Meteor.isClient) {
         return htmlResults
     }
                 
+    function welcomeShowOwnedSheets(res){
+        htmlResults = ""
+        var miniArray = getUserSheetReferenceData(res)
+        $(miniArray).each(function (x, y) {
+            var ownedSheetResult = showSheet("posts/" + y['sheetId'], y['sheetName'], y['createdDate'], y['sheetStatus'], '', y['numContributed'], y['numPending'])
+            htmlResults = htmlResults + ownedSheetResult
+        })
+
+        return htmlResults
+    }
+                
+                
     Meteor.call('listWelcomeSharedSheets', Meteor.user().emails[0].address, function (error, result) {
       if (error) {
         "ERROR"
       } else {
           if (result.length > 0){
-                    //$("#results").append(result[0]['sheetOwnerEmail'])
+
                     $("#sheetsYouShare_results").append(showSheets(result))
             
           } else {
@@ -80,7 +87,24 @@ if (Meteor.isClient) {
           }
         
       }
-  });            
+  });        
+  
+  
+      Meteor.call('listWelcomeOwnedSheets',  function (error, result) {
+      if (error) {
+        "ERROR"
+      } else {
+          if (result.length > 0){
+                    $("#sheetsYouOwn_results").append(welcomeShowOwnedSheets(result))
+            
+          } else {
+                  $("#sheetsYouOwn_results").append('<p id="welcomeEmptyText"> You havent shared any sheets yet </p>')
+                  
+            
+          }
+        
+      }
+  });
                 
                 
                 

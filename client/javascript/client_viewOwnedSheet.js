@@ -234,6 +234,12 @@ if (Meteor.isClient) {
                 td.style.backgroundColor = "#5db85b";
 
             };
+            
+            HiddenRenderer = function (instance, td, row, col, prop, value, cellProperties) {
+                Handsontable.renderers.TextRenderer.apply(this, arguments);
+                td.style.backgroundColor = "#5db85b";
+
+            };
 
 
             console.log("VIEWSHEETLOADED")
