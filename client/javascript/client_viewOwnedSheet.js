@@ -105,6 +105,18 @@ if (Meteor.isClient) {
         }
 
 
+        processEmails = function(emailArray){
+            $(emailArray).each(function(x,y){
+
+
+                    Meteor.call('email_notifyShared_newUser', y)
+                
+                
+            })
+            
+        }
+
+
         function getSharedEmails() {
             console.log(getGridEmailValues())
             //shareResult = sheetDefinitions.find({_id: Session.get('mySheetId') }, {fields: {sharedEmails: 1}}).fetch()
@@ -207,6 +219,7 @@ if (Meteor.isClient) {
                 console.log("submit share form button clicked")
                 addSharedEmails()
                 confirmShare()
+                processEmails(getGridEmailValues())
                 //client_email_notifyShared_newUser()
             })
 
