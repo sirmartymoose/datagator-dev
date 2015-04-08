@@ -1,15 +1,9 @@
 if (Meteor.isClient) {
 
-
-
     Template.viewSheet.rendered = function () {
+        
         Meteor.subscribe("ownerSheetDefinitions");
-        cLog('subscribed to ownerSheetDefinitions')
         Meteor.subscribe("ownerSheetData");
-        console.log('subscribed to ownerSheetData')
-
-
-
 
 
         $(function () {
@@ -18,18 +12,18 @@ if (Meteor.isClient) {
 
 
         // redundant. Needs refactoring.
-        thisSheetId = Session.get('mySheetId')
-        mySheetId = thisSheetId
+                thisSheetId = Session.get('mySheetId')
+                mySheetId = thisSheetId
         //console.log(mySheetId)
-        sheetId = mySheetId;
+                 sheetId = mySheetId;
 
 
-        // Unclear. Remove priority 1
-        sheetOwnerAuthor = "sirmartymoosez"
+        // Unclear.
+                sheetOwnerAuthor = "sirmartymoosez"
 
 
         // sheet Definitions data
-        Sheets = sheetDefinitions.findOne({_id: sheetId})
+                Sheets = sheetDefinitions.findOne({_id: sheetId})
 
 
         //Start  Share Functions
@@ -57,28 +51,18 @@ if (Meteor.isClient) {
             outputArray = _.uniq(outputArray);
             outputArray = _.filter(outputArray, function (num) {
                 return !!num
-                //return num.length > 0;
+
             });
 
-            //outputObj['sharedEmails'] = outputArray
             return outputArray
         }
 
 
         function addSharedEmails() {
-            console.log("AddSharedEmails function initiated")
-
             sharedEmailArray = []
-
-
             sharedEmailArray = getGridEmailValues()
-            cLog("sharedEmailArray: " +sharedEmailArray)
-
-
             sharedEmails = {sharedEmails: sharedEmailArray}
-            cLog("session sheet id: " + Session.get('mySheetId'))
             sheetDefinitions.update({_id: Session.get('mySheetId')}, {$set: sharedEmails})
-            
             // Begin Saving for 0.06 Release
             
                 lineIterator = 0
@@ -107,40 +91,23 @@ if (Meteor.isClient) {
 
         processEmails = function(emailArray){
             $(emailArray).each(function(x,y){
-
-
                     Meteor.call('email_notifyShared_newUser', y)
-                
-                
             })
-            
         }
 
 
         function getSharedEmails() {
-            console.log(getGridEmailValues())
-            //shareResult = sheetDefinitions.find({_id: Session.get('mySheetId') }, {fields: {sharedEmails: 1}}).fetch()
             shareResult = getGridEmailValues()
-
-
             return shareResult
-
-
         }
 
         function populateShareForm() {
-
-
             $("#shareSheetForm").html("")
             var myShares = getSharedEmails()
             $(myShares).each(function (x, y) {
                 formString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' disabled id='emailAddress' placeholder='" + y + "' value = '" + y + " ' ></div>"
                 $("#shareSheetForm").append(formString)
-
             })
-
-            //      var inputString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' id='emailAddress' placeholder='Enter Email Adress'></div>"
-            //       $("#shareSheetForm").append(inputString)
 
         }
 
@@ -205,6 +172,18 @@ if (Meteor.isClient) {
                        // $("#confirmedShareSnippet").hide('blind', {}, 500)
 
             }
+            
+            
+             newEmailFilter = function(){
+                //alreadySharedArray = _.pluck(sheetDefinitions.find({_id: Session.get('mySheetId') }, {fields: {sharedEmails:1, _id: 0}}).fetch(), 'sharedEmails')
+
+                alreadySharedArray =  _.pluck(sheetDefinitions.find({_id: Session.get('mySheetId') }, {fields: {sharedEmails:1, _id: 0}}).fetch(), 'sharedEmails')
+                alreadySharedArray = alreadySharedArray[0]
+                shareResult = getGridEmailValues()
+                var diff = _.difference(shareResult , alreadySharedArray);
+                return diff
+                
+            }
 
 
             // DOM Function to add a blank share function
@@ -217,9 +196,11 @@ if (Meteor.isClient) {
             //DOM Function to add shared emails to the DB
             $("#submitShareForm").click(function () {
                 console.log("submit share form button clicked")
+                console.log(newEmailFilter())                
+                processEmails(newEmailFilter())
                 addSharedEmails()
                 confirmShare()
-                processEmails(getGridEmailValues())
+
                 //client_email_notifyShared_newUser()
             })
 
@@ -255,9 +236,6 @@ if (Meteor.isClient) {
             };
 
 
-            console.log("VIEWSHEETLOADED")
-            //console.log(_id)
-            //console.log(thisSheetId)
             myData = sheetDefinitions.findOne({_id: thisSheetId})
             console.log(myData)
             $("#results").append(myData['title'])

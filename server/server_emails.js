@@ -56,6 +56,8 @@ Meteor.methods({
     return emailBlockList.find().fetch()
   }
   
+  
+  
 });
 
    

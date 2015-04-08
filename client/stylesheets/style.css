@@ -106,20 +106,7 @@
 		background-color: green;
 	}
 	
-	#chatBox{
-		position: relative; 
-		float: left;
-		height: 300px;
-		width: 300px;
-	}
-	
-	
-	#chatContent{
-		position: relative; 
-		float: left; 
-		height: 300px;
 
-	}
 	
 	
 	.navbar-default{
@@ -300,3 +287,37 @@ height: 10px;
         margin: 15px;
         padding: 5px;
     }
+
+
+
+	#chatContainer{
+		height: 450px;
+		border: solid black 1px;
+		border-radius: 5px;
+		margin: 5px;
+		padding: 5px;
+	}
+	
+	#chatContent{
+		height: 400px;
+		border: solid black 1px;
+		border-radius: 5px;
+		margin: 5px;
+		padding: 5px;
+	}
+	
+	.messageIncoming{
+		position:relative;
+		float: left;
+		background-color: pink;
+		margin:10px;
+		padding: 10px;
+	}
+	
+	.messageOutgoing{
+		position:relative;
+		float: right;
+		background-color: yellow;
+		margin: 10px;
+		padding: 10px;
+	}
