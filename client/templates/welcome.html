@@ -2,17 +2,17 @@
 <template name="welcome">
    {{#if currentUser}}
   		<div class="row" id="pageTitle">
-			<div class='col-md-2'> </div>
-			<div class='col-md-8'>
+			<div class='col-md-2 col-xs-0 col-md-2 col-lg-2'> </div>
+			<div class='col-md-8 col-xs-10 col-md-8 col-lg-8'>
 				<div class="page-header">
 					<h1 data-toggle="popover"  id='testPop'>Dashboard<small> Select Your Action</small></h1>
 				</div>
 			</div>
-			<div class='col-md-2'> </div>
+			<div class='col-md-2 col-xs-0 col-md-2 col-lg-2'> </div>
 		</div>
 		<div class="row">
-		    <div class='col-md-2'></div>
-		    <div class='col-md-8'>
+		    <div class='col-md-2 col-xs-2 col-md-2 col-lg-2'></div>
+		    <div class='col-md-8 col-xs-8 col-md-8 col-lg-8'>
 		<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">Create New Sheet <img src='/qa.png' id='help' data-toggle="tooltip" data-placement="right" title="Create a New Sheet to collect, combine, and/or share information"/></h3>
@@ -21,16 +21,16 @@
 
 				  <li class='list-group-item'>
 				  	<div class='row'>
-				  		<div class='col-md-1'></div>
-				  	        <div class='col-md-2'>
-            <button class="button btn-success btn" style=" position:relative; top: 2px"> <a href="/create" style="color:white;;"> Create New</a></button>
+				  		<div class='col-md-1 col-xs-1 col-md-1 col-lg-1'></div>
+				  	        <div class='col-md-2 col-xs-2 col-md-2 col-lg-2'>
+            <button class="button btn-success btn" style=" position:relative; top: 2px"> <a href="/create" style="color:white;"> Create New</a></button>
 
         </div>
-        <div class='col-md-6'>
+        <div class='col-md-6 col-xs-6 col-md-6 col-lg-6'>
             <p id="createSheetText">Create a new sheet and share it with others</p>
 
         </div>
-        <div class='col-md-3'></div>
+        <div class='col-md-3 col-xs-3 col-md-3 col-lg-3'></div>
         </div>
 				  	</li>
   			</ul>
@@ -53,7 +53,7 @@
   			</ul>
 	    </div>
 	    </div>
-	    <div class='col-md-2'></div>
+	    <div class='col-md-2 col-xs-2 col-md-2 col-lg-2'></div>
 		</div>
 
    {{/if}}

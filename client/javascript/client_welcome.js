@@ -34,23 +34,23 @@ if (Meteor.isClient) {
 
             resultString = "<li class='list-group-item'>"+
     				"<div class='row'>"+
-    					"<div class='col-md-4' >"+ 
+    					"<div class='col-md-4 col-xs-4 col-sm-4 col-lg-4' >"+ 
     						"<div class='list-group-item-heading'>"+
     							"<h4><a href='" + sheetURL  + "'> "+ sheetName +"</a></h4>"+
     						"</div>"+
     					"</div> "+
-    					"<div class='col-md-4'>"+
+    					"<div class='col-md-4 col-xs-4 col-sm-4 col-lg-4'>"+
     					"	<div class='list-group-item-heading'>"+
     					"		<h4>Saved</h4> "+
     						"</div>"+
     					"</div>"+
     				"</div>"+
     				"<div class='row'>"+
-    					"<div class='col-md-4' > "+
+    					"<div class='col-md-4 col-xs-4 col-sm-4 col-lg-4' > "+
     							
     						
     					"</div> "+
-    					"<div class='col-md-2'>"+
+    					"<div class='col-md-2 col-xs-2 col-sm-2 col-lg-2'>"+
     					"		Status "+
     					"</div>"+
     				"</div>"+
