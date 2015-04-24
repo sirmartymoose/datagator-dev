@@ -127,7 +127,8 @@ if (Meteor.isClient) {
           $("#sheetName").click(function () {
               $("#leftNav").toggle()
 
-          })
+          })// DOM Function to hide left nav by default
+            $("#leftNav").hide()
 
           $("#sheetNameValue").html(getSheetTitle())
 
@@ -197,6 +198,42 @@ if (Meteor.isClient) {
 
 
           })
+          
+          
+          
+                    // Chat Functions START
+            
+            
+            sheetId = Session.get('mySheetId')
+            currentUser = Meteor.user()
+            currentUser = currentUser['emails'][0]['address']
+            messageGuest = currentUser
+            isOwner = 0
+            senderId = Meteor.userId()
+            updateChat(sheetId, messageGuest)
+            
+          
+          
+          $("#typeMessageText").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#submitMessageButton").click();
+    }
+});
+          
+          
+          
+          $("#submitMessageButton").click(function(){
+            var msg = $("#typeMessageText").val()
+        
+            Meteor.call('insertMessage', sheetId, senderId,  messageGuest, isOwner,  msg)
+            $("#typeMessageText").val("")
+            
+          })
+          
+            
+   
+
+            // Chat Functions END
 
 
       });

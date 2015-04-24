@@ -292,10 +292,9 @@ height: 10px;
 
 	#chatContainer{
 		height: 450px;
-		border: solid black 1px;
-		border-radius: 5px;
-		margin: 5px;
-		padding: 5px;
+		width: 285px;
+
+
 	}
 	
 	#chatContent{
@@ -321,3 +320,73 @@ height: 10px;
 		margin: 10px;
 		padding: 10px;
 	}
+	
+	/* CSS declarations go here */
+
+
+.messageLeft{
+    position: relative;
+    color: #757577;
+    background-color: #e6e5eb;
+
+
+}
+
+.messageRight{
+    position: relative;
+    background-color: #0b83fe;
+    color: #ffffff;
+
+}
+
+#chatContainer{
+
+    
+}
+
+#chatWidget{
+
+}
+
+#chatContentRowText{
+    
+        height: 300px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#chatContentRow{
+    
+
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size:.9em;
+    height: 400px;
+}
+
+#submitMessageButton{
+	
+	font-size: .8em;
+	  position: relative;
+  right: 25px;
+  top: 3px;
+
+}
+
+#typeMessage{
+	margin-left: 5px;
+	margin-bottom: 5px;
+	
+}
+
+#chatActionsRow{
+	border: solid 1px;
+	border-top: 1px;
+	border-right: 0px;
+	border-bottom: 0px;
+	border-left: 0px;
+}
+
+.listedUser{
+
+}

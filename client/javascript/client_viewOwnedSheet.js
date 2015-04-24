@@ -136,6 +136,8 @@ if (Meteor.isClient) {
             // Hide the modal that shows if nobody has shared
 
             $("#noShareModal").hide()
+            
+
 
 
 
@@ -302,6 +304,52 @@ if (Meteor.isClient) {
             })
 
 
+                    // Chat Functions START
+            Meteor.subscribe("rabbit", Session.get('mySheetId'))
+            rabbitCursor = messages.find({sheetId: sheetId})
+            var rabbitHandle = rabbitCursor.observe({
+                added: function (post) {testMessagesUpdate(sheetId)} 
+            });
+            
+            
+            userArray = getGridEmailValues()
+            sheetId = Session.get('mySheetId')
+            currentUser = Meteor.user()
+            currentUser = currentUser['emails'][0]['address']
+            //messageGuest = "mackaycrawford@gmail.com"
+            isOwner = 1
+            senderId = Meteor.userId()
+            
+            
+          showList()
+          
+          $("#typeMessageText").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#submitMessageButton").click();
+    }
+});
+          
+          
+          
+          $("#submitMessageButton").click(function(){
+            var msg = $("#typeMessageText").val()
+        
+            Meteor.call('insertMessage', sheetId, senderId,  messageGuest, isOwner,  msg)
+            $("#typeMessageText").val("")
+            
+          })
+          
+            
+   
+
+            // Chat Functions END
+            
+            
+            
+            
+            
+            
+            
         });
 
     }

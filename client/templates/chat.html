@@ -1,59 +1,46 @@
 <template name="chat">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-3" id="chatContainer">
-                  <div class="row" id="chatContent">
-                        <div class="row">
-                              <div class='col-md-2'></div>
-                              <div class='col-md-8' id="chatContentMessageSpace">
-                                    
-
-                                    <div class="row"> 
-                                          <div class="col-md-12" ><div class="messageOutgoing"> outgoing</div></div>
-                                    </div>
-                                    <div class="row"> 
-                                          <div class="col-md-12" ><div class="messageIncoming"> Incoming</div></div>
-                                    </div>
-                                    
-                              </div>
-                              <div class='col-md-2'></div>
-                        </div>
-                        
+    <div class="container" id="chatContainer">
+    <div class="row">
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-310" id="chatWidget">
+              <div class="panel panel-default" id="sheetWidget">
+                <div class="panel-heading" id="chatPanelHeading">
+                  Shared Users
                   </div>
-                  <div class="row" id="chatActions">
-                        <div class='col-md-0'></div>
-                        <div class='col-md-10'>
-                              <div class="row">
-                                    <div class='col-md-10' id="messageContent">
-                                          <input type="text" placeholder="input message here" id="messageContentText"/>
-                                          
-                                    </div>
-                                    <div class='col-md-2' id="messageSend">
-                                          
-                                          <button class="button btn btn-primary" id="messageSendButton">Send</button>
-                                    </div>
 
-                              </div>
-                              
-                        </div>
-                        <div class='col-md-0'></div>
-                  </div>
-                  
-            </div>
-{{> messages}}
+    <div class="row" id="chatContentRow">
+      
+<ul class="list-group" id="cPanelList">
 
 
-        </div>
+</ul>
+      
+      
+<ul class="list-group" id="chatContentRowText">
+
+
+</ul>
+      
+      
+    </div>
+    <div class="row" id="chatActionsRow">
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" id="typeMessage">
+          <textarea class="form-control" rows="1" id="typeMessageText"> </textarea>
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="submitMessage">
+        <button class="button btn btn-sm btn-primary" id="submitMessageButton"> Send</button>
+        
+      </div>
+    </div>
+    </div>
+      
+      </div>
     </div>
     
     
 
+</div>
 
-</template>
 
-<template name="messages">
-  {{#each messages}}
-    <strong>{{sentFrom}}:</strong> {{messageContent}}<br>
-  {{/each}}
+
+
 </template>
