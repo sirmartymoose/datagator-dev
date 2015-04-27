@@ -3,7 +3,7 @@ Meteor.startup(function () {
 
 sharedSheetEmailSnippet = "A user has shared a sheet with you. Datagator is an application for gathing and storing data quickly and easily." +
 "</br></br> DataGator is a free product, but you will need to register in order to respond" +
-"</br></br> Go to <a href='http://www.datagator.us'>DataGator</a> to sign in." +
+"</br></br> Go to <a href='http://datagator.us'>DataGator</a> to sign in." +
 "</br></br>Sincerely," +
 "</br>Dave" 
 
