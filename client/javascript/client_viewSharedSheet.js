@@ -3,103 +3,87 @@ if (Meteor.isClient) {
   
 
   Template.viewSharedSheet.rendered = function () {
+        currentUser = Meteor.user()
+      Session.set("isOwner", 0)
+      guestFields = get_arrayOfFieldsWhereWhoEditIsGuest(Session.get('mySheetId'))
+
+    // Server Functions
       Meteor.subscribe("guestSheetDefinitions", Meteor.user()['emails'][0]['address']);
-      console.log('subscribed to guestSheetDefinitions')
       Meteor.subscribe("guestSheetData", Meteor.user()['emails'][0]['address']);
-      console.log('subscribed to guestSheetData')
+      Meteor.subscribe("rabbit", Session.get('mySheetId'));
+      
+      Sheets = sheetDefinitions.findOne({_id: Session.get('mySheetId')})
+      sheetOwnerAuthor = Session.get("userEmail")
+      
+      rabbitCursor = messages.find({
+          sheetId: Session.get('mySheetId')
+        });
+      var rabbitHandle = rabbitCursor.observe({
+          added: function (post) {
+              testMessagesUpdate(Session.get('mySheetId'))
+          }
+      });
+
+
+  /// Start Dynamic Table
+  
+          HOTCursor = sheetData.find({
+          sheetId: Session.get('mySheetId')
+        });
+        
+        
+        var HOTHandle = HOTCursor.observeChanges({
+                added: function (id, fields) {
+                cLog("database: observeChanges: Record Added: " + id + JSON.stringify(fields))
+                hotInstance.loadData(getData())
+                cLog("ReRendered Grid")
+            }, changed: function(id, fields){
+                var miniArray = []
+                cLog("database: observeChanges: Record Changed: " + id + JSON.stringify(fields))
+                // ONly change if a value in this format
+                //{"sheetId":"sjBFqaBaffZGnP8ZP","sheetOwnerAuthor":null,"mycol":"pong","yourcol":null}
+                // Matches a value in this format
+                // ["yourcol"]
+                fieldKeys = _.keys(fields)
+                cLog("ID: XYY: fieldKeys are here: " + fieldKeys)
+                testValues = guestFields
+                cLog("ID: XYY: testValues to look against are here: " + testValues)
+                isGuestField = 0
+                $(testValues).each(function(x,y){
+                    testValue = _.indexOf(fieldKeys, y);
+                    if(testValue > -1){
+                        isGuestField = 1
+                    }
+                })
+                
+                if (isGuestField == 0){
+                                    miniFields = fields 
+                miniFields['_id'] = id
+                cLog(JSON.stringify(miniFields))
+                miniArray.push(miniFields)
+                updateCells(miniArray)
+                cLog("ObserveChagnes:  ABC: Updated")
+                    
+                } else {
+                    
+                    cLog("ObserveChagnes: Any Owner Field has been updated, so the grid was not updated: id: ABC: not Updated")
+                    
+                }
+
+                
+            }
+        });  
+  
+  
+  /// End 
+
+
 
       $(function () {
           $('[data-toggle="tooltip"]').tooltip()
       })
 
 
-      sheetEvent(Session.get("mySheetId"), "guestLoaded")
-
-      function logEvent(ActionTemplate, ActionMessage, ActionSheetId) {
-          actionUserId = Meteor.userId()
-          var currentDate = new Date();
-          logEvent = {
-              actionDate: currentDate,
-              actionUserId: actionUserId,
-              actionSheetId: ActionSheetId,
-              actionTemplate: ActionTemplate,
-              actionMessage: ActionMessage
-          }
-          userActions.insert(logEvent)
-
-      }
-
-      logEvent('viewSharedSheet', 'Rendered: viewSharedSheet.js', Session.get("mySheetId"))
-
-
-      thisSheetId = Session.get('mySheetId')
-      mySheetId = Session.get("mySheetId")
-      console.log(mySheetId)
-
-      sheetId = mySheetId;
-
-      sheetOwnerAuthor = Session.get("userEmail")
-
-      //myid = this.params._id
-
-      console.log(sheetOwnerAuthor)
-
-      Sheets = sheetDefinitions.findOne({_id: sheetId})
-
-
-      // console.log(Sheets)
-
-
-      //console.log(getHot_dataSchema())
-
-      //console.log(getHot_colHeaders(true))
-      //console.log(getHot_columns(true))
-
-
-      //Start  Share Functions
-
-      function addSharedEmails() {
-
-          sharedEmailArray = []
-
-
-          $(".form-group").each(function () {
-              var emailValue = $(this).find("#emailAddress").val()
-              sharedEmailArray.push(emailValue)
-
-
-          })
-
-          sharedEmails = {sharedEmails: sharedEmailArray}
-          sheetDefinitions.update({_id: Session.get('mySheetId')}, {$set: sharedEmails})
-          return sharedEmailArray
-
-
-      }
-
-
-      function getSharedEmails() {
-          shareResult = sheetDefinitions.find({_id: Session.get('mySheetId')}, {fields: {sharedEmails: 1}}).fetch()
-          return shareResult
-
-
-      }
-
-      function populateShareForm() {
-
-
-          $("#shareSheetForm").html("")
-          var myShares = getSharedEmails()
-          $(myShares[0]['sharedEmails']).each(function (x, y) {
-              formString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' disabled id='emailAddress' placeholder='" + y + "' value = '" + y + " ' ></div>"
-              $("#shareSheetForm").append(formString)
-
-          })
-
-          var inputString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' id='emailAddress' placeholder='Enter Email Adress'></div>"
-          $("#shareSheetForm").append(inputString)
-
-      }
 
 
       // End Share Functions
@@ -107,22 +91,8 @@ if (Meteor.isClient) {
 
       $(document).ready(function () {
 
-          $("#shareSheet").click(function () {
-              populateShareForm()
-          })
-
-          $("#addFormEmail").click(function () {
-              var inputString = "<div class='form-group'><label for='shareEmail'>Share with</label><input type='email' class='form-control shareEmailAddress' id='emailAddress' placeholder='Enter Email Adress'></div>"
-              $("#shareSheetForm").append(inputString)
-          })
 
 
-          //getSharedEmails()
-          $("#submitShareForm").click(function () {
-
-              console.log(addSharedEmails())
-              console.log(getSharedEmails())
-          })
 
           $("#sheetName").click(function () {
               $("#leftNav").toggle()
@@ -132,23 +102,13 @@ if (Meteor.isClient) {
 
           $("#sheetNameValue").html(getSheetTitle())
 
-          yellowRenderer = function (instance, td, row, col, prop, value, cellProperties) {
-              Handsontable.renderers.TextRenderer.apply(this, arguments);
-              td.style.backgroundColor = "#ececec";
-
-          };
-
-
-          console.log("VIEWSHEETLOADED")
-          //console.log(_id)
-          //console.log(thisSheetId)
-          myData = sheetDefinitions.findOne({_id: thisSheetId})
-          console.log(myData)
+          myData = sheetDefinitions.findOne({_id: Session.get('mySheetId')})
+          cLog(myData)
           $("#results").append(myData['title'])
 
-          function getData() {
+          getData = function() {
               resultArray = []
-              loadData = sheetData.find({sheetId: sheetId, sheetOwnerAuthor: Session.get("userEmail")}).fetch()
+              loadData = sheetData.find({sheetId: Session.get('mySheetId'), sheetOwnerAuthor: Session.get("userEmail")}).fetch()
 
               $(loadData).each(function (x, y) {
                   resultArray.push(y)
@@ -168,9 +128,54 @@ if (Meteor.isClient) {
               data: getData(),
               colHeaders: getHot_colHeaders(false),
               colWidths: getHot_colWidths(false),
-              dataSchema: getHot_dataSchema(),
+              dataSchema: getHot_dataSchema(false),
               columns: getHot_columns(false),
-              minSpareRows: 1
+              minSpareRows: 1, 
+                afterChange: function(changes, source){
+                    cLog("AfterChange: Initiated")
+                    cLog("AfterChange: ChangesData: " + changes)
+                    cLog("AfterChange: sourceData: " + source)
+                    
+                    
+                    if('null' != changes){
+                    
+                        cLog("AfterChange: Route: If changes are not 'null'")
+                        
+                        if(!!changes){
+                    
+                            cLog("AfterChange: Route: If changes variable exists !!changes")
+                    
+                            if(changes.length > 0){
+                                cLog("AfterChange: Route: If length of changes > 0")
+                                cLog("AfterChange: DataType: Changes dataType is " + typeof(changes))
+                                cLog("AfterChange: Data: Changes data is: " + changes)
+                                cLog("AfterChange: Data: Changes[0] data is: " + changes[0])
+                                testChangesVariable = changes[0]
+                                cLog("AfterChange: Data: Source data is: " + source)
+
+                                $(changes).each(function(x,y){
+                                    cLog("AfterChange: Here is Y" + y)
+                                    if(y[3] != null){
+                                        cLog("AfterChange: Y3 (new Value) is not null. Here is Y: " + y)
+                                        cLog("AfterChange: UpdateCellInDatabase called! Here is the data: updateCellInDatabase(" + y[0] +","+ y[1] + "," + y[3]+ " )")
+                                        updateCellInDatabase(y[0], y[1], y[3])
+                                        //cLog("AfterChange: UpdateCellInDatabase called for guest! Here is the data: updateCellInDatabase(" + y[0] +","+ 'sheetOwnerAuthor' + "," + Meteor.user()['emails'][0]['address']+ " )")
+
+                                        //updateCellInDatabase(y[0], 'sheetOwnerAuthor', Meteor.user()['emails'][0]['address'])
+                                    }
+                                })
+                                
+                            }
+                        }
+                    } else{
+                          cLog("CHANGES null: " + changes)
+                          cLog("SOURCE: " + source)
+                    }
+        
+                    
+                }
+                    
+                    
 
           });
 
@@ -205,7 +210,7 @@ if (Meteor.isClient) {
             
             
             sheetId = Session.get('mySheetId')
-            currentUser = Meteor.user()
+            
             currentUser = currentUser['emails'][0]['address']
             messageGuest = currentUser
             isOwner = 0
