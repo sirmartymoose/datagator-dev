@@ -44,8 +44,13 @@ if (Meteor.isClient) {
         var HOTHandle = HOTCursor.observeChanges({
                 added: function (id, fields) {
                 cLog("database: observeChanges: Record Added: " + id + JSON.stringify(fields))
-                hotInstance.loadData(getData())
-                cLog("ReRendered Grid")
+                
+                if (typeof hotInstance != "undefined") {
+                    hotInstance.loadData(getData())
+                    cLog("ReRendered Grid")
+                }
+                //hotInstance.loadData(getData())
+                //cLog("ReRendered Grid")
             }, changed: function(id, fields){
                 var miniArray = []
                 cLog("database: observeChanges: Record Changed: " + id + JSON.stringify(fields))
@@ -72,6 +77,7 @@ if (Meteor.isClient) {
                 miniArray.push(miniFields)
                 updateCells(miniArray)
                 cLog("ObserveChagnes: A GUEST Field has been updated, so the grid WAS updated: id: ABC: Updated")
+                hotInstance.loadData(getData())
                     
                 } else {
                     
@@ -79,7 +85,7 @@ if (Meteor.isClient) {
                     
                 }
 
-                
+
             }
         });  
   
@@ -237,6 +243,7 @@ if (Meteor.isClient) {
                     } else{
                           cLog("CHANGES null: " + changes)
                           cLog("SOURCE: " + source)
+                          
                     }
         
                     

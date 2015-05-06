@@ -1,4 +1,4 @@
-
+/*
 Template.messages.helpers({
     messages: function() {
         return chatHistory.find({});
@@ -66,3 +66,5 @@ Template.chat.rendered = function () {
 
 
 }
+
+*/
