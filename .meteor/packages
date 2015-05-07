@@ -17,3 +17,5 @@ meteorhacks:npm
 
 
 npm-container
+http
+gfk:mailgun-api

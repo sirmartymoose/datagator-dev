@@ -3,6 +3,9 @@
 Template.createSheet.events({
     'submit form': function (e) {
         e.preventDefault();
+        
+        if(validate_createSheet() == true){
+        
         sheetCols = assembleColumns();
         var sheet = {
             sheetOwnerId: Meteor.userId(),
@@ -19,6 +22,7 @@ Template.createSheet.events({
             Router.go('viewSheet', {_id: result._id});
             Session.set("mySheetId", result._id)
         });
+        }
     }, // end submit form functions
 
     "click #addColumn": function (e) {

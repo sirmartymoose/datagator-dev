@@ -119,6 +119,10 @@ if (Meteor.isClient) {
                 $('[data-toggle="tooltip"]').tooltip()
             });
 
+            // Hide error message if created on createsheet
+            
+            $("#errorMessage").html("")
+
             // Hide the modal that shows if nobody has shared
             $("#noShareModal").hide();
 
