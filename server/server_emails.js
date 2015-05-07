@@ -60,7 +60,7 @@ email_notifyShared_newUser: function (email) {
         var NigerianPrinceGun = new Mailgun(options);
         NigerianPrinceGun.send({
                                'to': email,
-                               'from': 'sirmartymoose@gmail.com',
+                               'from': 'dave@datagator.us',
                                'html': sharedSheetEmailSnippet,
                                'text': '',
                                'subject': 'Datagator: A user has shared a sheet with you'
